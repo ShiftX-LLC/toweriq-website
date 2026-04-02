@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TowerIQ — Enterprise AI Portfolio Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Nav -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true" hidden></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">T</div>
+      <div class="nav-logo-content">
+        <div class="nav-logo-text">Tower<span>IQ</span></div>
+        <p class="nav-tagline">Shift to AI. Multiply what matters</p>
+      </div>
+    </a>
+    <ul class="nav-links" id="primary-nav">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#features">Platform</a></li>
+      <li><a href="#platforms">Integrations</a></li>
+      <li><a href="#trust">Security</a></li>
+      <li><a href="https://www.shiftx.ai" target="_blank" rel="noopener noreferrer" class="nav-shiftx">A ShiftX AI Product</a></li>
+      <li><a href="#" class="nav-cta" onclick="openModal(event)">Book a Demo</a></li>
+    </ul>
+    <button type="button" class="nav-toggle" id="navToggle" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Enterprise AI Portfolio Intelligence
+        </div>
+        <h1>Your AI portfolio<br>deserves an<br><em>intelligent command center.</em></h1>
+        <p class="hero-sub">Complete visibility into every AI tool across your organization — governed, optimized, and in control.</p>
+
+        <!-- Mobile-only KPI strip -->
+        <div class="hero-metrics-strip">
+          <div class="hero-metric">
+            <span class="hero-metric-value">147</span>
+            <span class="hero-metric-label">AI Tools</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric">
+            <span class="hero-metric-value">91%</span>
+            <span class="hero-metric-label">Compliant</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric">
+            <span class="hero-metric-value">$38k</span>
+            <span class="hero-metric-label">Monthly AI</span>
+          </div>
+        </div>
+
+        <!-- Feature modules -->
+        <div class="hero-modules">
+          <div class="hero-module">
+            <div class="hero-module-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="hero-module-body">
+              <h4>Auto-Discovery</h4>
+              <p>See every AI tool — including shadow AI employees added without approval.</p>
+            </div>
+          </div>
+          <div class="hero-module">
+            <div class="hero-module-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="hero-module-body">
+              <h4>Policy Enforcement</h4>
+              <p>Upload your governance PDF. Rules extracted and enforced automatically.</p>
+            </div>
+          </div>
+          <div class="hero-module">
+            <div class="hero-module-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="hero-module-body">
+              <h4>Spend Intelligence</h4>
+              <p>Track AI costs by tool and department. Eliminate waste before it compounds.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" onclick="openModal(event)">Book a Demo →</a>
+          <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-float-card card-1">
+          <div class="float-card-title">Shadow AI Detected</div>
+          <div class="float-card-value float-card-value--inline" style="color: var(--amber); font-size: 16px;">
+            <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>3 unregistered tools</span>
+          </div>
+          <div class="float-card-sub">Finance · Marketing · HR</div>
+        </div>
+        <div class="hero-float-card card-2">
+          <div class="float-card-title">Health Score</div>
+          <div class="float-card-value">91<span style="font-size:14px; color:var(--gray-500);">/100</span></div>
+          <div class="float-card-sub change-up">↑ 4 pts this week</div>
+        </div>
+        <div class="hero-float-card card-3">
+          <div class="float-card-title">Policy Engine</div>
+          <div class="float-card-value float-card-value--inline" style="font-size: 14px; color: var(--emerald);">
+            <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>AI-Policy-2026.pdf</span>
+          </div>
+          <div class="float-card-sub">12 rules extracted · enforcing</div>
+        </div>
+        <div class="hero-dashboard">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">TOWERIQ · PORTFOLIO OVERVIEW</div>
+          </div>
+          <div class="dash-body">
+            <div class="dash-stats">
+              <div class="dash-stat">
+                <div class="dash-stat-label">Total AI Tools</div>
+                <div class="dash-stat-value">147</div>
+                <div class="dash-stat-change change-up">↑ 12 this month</div>
+              </div>
+              <div class="dash-stat">
+                <div class="dash-stat-label">Compliance</div>
+                <div class="dash-stat-value">91%</div>
+                <div class="dash-stat-change change-up">↑ 4 pts</div>
+              </div>
+              <div class="dash-stat">
+                <div class="dash-stat-label">Monthly Spend</div>
+                <div class="dash-stat-value">$38k</div>
+                <div class="dash-stat-change change-down">↓ 8% optimized</div>
+              </div>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr><th>Tool</th><th>Platform</th><th>Dept</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sales Copilot</td><td>Salesforce</td><td>Revenue</td>
+                    <td><span class="status-badge status-compliant">● Pass</span></td>
+                  </tr>
+                  <tr>
+                    <td>HR Virtual Agent</td><td>ServiceNow</td><td>People</td>
+                    <td><span class="status-badge status-review">● Review</span></td>
+                  </tr>
+                  <tr>
+                    <td>Contract Reviewer</td><td>AWS Bedrock</td><td>Legal</td>
+                    <td><span class="status-badge status-compliant">● Pass</span></td>
+                  </tr>
+                  <tr>
+                    <td>Support Bot</td><td>OpenAI</td><td>CX</td>
+                    <td><span class="status-badge status-risk">● At Risk</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem" id="problem">
+  <div class="container">
+    <div class="problem-header animate-on-scroll">
+      <div class="section-label">The Challenge</div>
+      <h2>The fastest AI organizations aren't the most cautious — they have the <em>most visibility.</em></h2>
+      <p>AI adoption is accelerating across every department. That's exactly what should be happening. But without visibility into what's being deployed, what it costs, and how it's governed — speed becomes a liability instead of an advantage.</p>
+    </div>
+    <div class="problem-stats-wrap">
+      <div class="problem-stats" id="problemStatsTrack">
+        <div class="problem-stat animate-on-scroll">
+          <div class="problem-stat-value">98%</div>
+          <div class="problem-stat-desc">of organizations report some form of unsanctioned AI use by employees</div>
+          <div style="font-size: 11px; color: var(--gray-600); margin-top: 8px; font-family: var(--font-mono);">CrowdStrike 2026 Global Threat Report</div>
+        </div>
+        <div class="problem-stat animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="problem-stat-value">63%</div>
+          <div class="problem-stat-desc">of organizations still lack AI governance policies of any kind</div>
+          <div style="font-size: 11px; color: var(--gray-600); margin-top: 8px; font-family: var(--font-mono);">IBM 2025 AI Governance Survey</div>
+        </div>
+        <div class="problem-stat animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="problem-stat-value">$670K</div>
+          <div class="problem-stat-desc">added to average breach cost when shadow AI is a contributing factor</div>
+          <div style="font-size: 11px; color: var(--gray-600); margin-top: 8px; font-family: var(--font-mono);">IBM 2025 Cost of a Data Breach</div>
+        </div>
+      </div>
+      <div class="problem-stats-dots" role="tablist" aria-label="Challenge statistics slides">
+        <button type="button" class="problem-stats-dot active" data-slide="0" aria-selected="true" aria-label="Slide 1 of 3"></button>
+        <button type="button" class="problem-stats-dot" data-slide="1" aria-selected="false" aria-label="Slide 2 of 3"></button>
+        <button type="button" class="problem-stats-dot" data-slide="2" aria-selected="false" aria-label="Slide 3 of 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="hiw-header animate-on-scroll">
+      <div class="section-label">How It Works</div>
+      <h2>Up and running in <em>three steps.</em></h2>
+    </div>
+    <div class="hiw-layout animate-on-scroll">
+
+      <!-- Left: Vertical Tabs -->
+      <div class="hiw-tabs">
+        <div class="hiw-tab active" data-tab="connect" onclick="switchHiwTab('connect')">
+          <div class="hiw-tab-num">01</div>
+          <h3>Connect your platforms</h3>
+          <p>Authorize TowerIQ with secure, read-only credentials for Salesforce, ServiceNow, AWS Bedrock, OpenAI, Azure, Entra ID, and GitHub. Setup takes minutes.</p>
+          <div class="hiw-tags">
+            <span class="hiw-tag">Read-only access</span>
+            <span class="hiw-tag">No code required</span>
+            <span class="hiw-tag">5-minute setup</span>
+          </div>
+        </div>
+        <div class="hiw-tab" data-tab="discover" onclick="switchHiwTab('discover')">
+          <div class="hiw-tab-num">02</div>
+          <h3>Discover your full inventory</h3>
+          <p>TowerIQ scans every connected platform — surfacing every agent, bot, model, and shadow AI app, including the ones no one knew existed.</p>
+          <div class="hiw-tags">
+            <span class="hiw-tag">Auto-sync</span>
+            <span class="hiw-tag">Shadow AI detection</span>
+            <span class="hiw-tag">Real-time updates</span>
+          </div>
+        </div>
+        <div class="hiw-tab" data-tab="govern" onclick="switchHiwTab('govern')">
+          <div class="hiw-tab-num">03</div>
+          <h3>Govern, optimize, accelerate</h3>
+          <p>Apply compliance policies, investigate spend, review adoption metrics, and generate executive reports — all from one dashboard.</p>
+          <div class="hiw-tags">
+            <span class="hiw-tag">Policy engine</span>
+            <span class="hiw-tag">Spend analytics</span>
+            <span class="hiw-tag">Audit trail</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Animated Panels -->
+      <div class="hiw-panel-container">
+
+        <!-- Panel 01: Connect -->
+        <div class="hiw-panel active" data-panel="connect">
+          <div class="hiw-panel-header">
+            <div class="hiw-panel-title">PLATFORM CONNECTIONS</div>
+            <div class="hiw-panel-badge">3 connected</div>
+          </div>
+          <div class="hiw-panel-body">
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-sf">SF</div>
+                <div class="platform-conn-name">Salesforce AgentForce</div>
+              </div>
+              <span class="conn-status conn-connected">Connected</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-sn">SN</div>
+                <div class="platform-conn-name">ServiceNow</div>
+              </div>
+              <span class="conn-status conn-connected">Connected</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-aws">λ</div>
+                <div class="platform-conn-name">AWS Bedrock</div>
+              </div>
+              <span class="conn-status conn-connecting">Connecting…</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-oai">◎</div>
+                <div class="platform-conn-name">OpenAI</div>
+              </div>
+              <span class="conn-status conn-disconnected">Connect</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-az">Az</div>
+                <div class="platform-conn-name">Azure OpenAI</div>
+              </div>
+              <span class="conn-status conn-disconnected">Connect</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-en" style="background: #0078D4;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="platform-conn-name">Microsoft Entra ID</div>
+              </div>
+              <span class="conn-status conn-connected">Connected</span>
+            </div>
+            <div class="platform-conn">
+              <div class="platform-conn-left">
+                <div class="platform-conn-icon p-gh" style="background: #24292F;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <div class="platform-conn-name">GitHub</div>
+              </div>
+              <span class="conn-status conn-disconnected">Connect</span>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <span class="panel-footer-left">3 of 7 platforms active</span>
+            <span class="panel-footer-right">+ Add custom connector →</span>
+          </div>
+        </div>
+
+        <!-- Panel 02: Discover -->
+        <div class="hiw-panel" data-panel="discover">
+          <div class="hiw-panel-header">
+            <div class="hiw-panel-title">ASSET DISCOVERY</div>
+            <div class="hiw-panel-badge">47 found</div>
+          </div>
+          <div class="hiw-panel-body">
+            <div class="discovery-scan">
+              <span class="scan-dot"></span>
+              Scanning Salesforce AgentForce… 47 assets found
+            </div>
+            <div class="discovery-item">
+              <div class="discovery-item-left">
+                <span class="discovery-item-name">Sales Copilot</span>
+                <span class="discovery-item-meta">Salesforce</span>
+              </div>
+              <span class="discovery-type">AI Agent</span>
+            </div>
+            <div class="discovery-item">
+              <div class="discovery-item-left">
+                <span class="discovery-item-name">HR Virtual Agent</span>
+                <span class="discovery-item-meta">ServiceNow</span>
+              </div>
+              <span class="discovery-type">Bot</span>
+            </div>
+            <div class="discovery-item">
+              <div class="discovery-item-left">
+                <span class="discovery-item-name">Contract Reviewer</span>
+                <span class="discovery-item-meta">AWS Bedrock</span>
+              </div>
+              <span class="discovery-type">Model</span>
+            </div>
+            <div class="discovery-item">
+              <div class="discovery-item-left">
+                <span class="discovery-item-name">Support Bot</span>
+                <span class="discovery-item-meta">OpenAI</span>
+              </div>
+              <span class="discovery-type">Bot</span>
+            </div>
+            <div class="discovery-counts">
+              <span class="discovery-count">AI Agents · <span>12</span></span>
+              <span class="discovery-count">Bots · <span>18</span></span>
+              <span class="discovery-count">Models · <span>9</span></span>
+              <span class="discovery-count">Flows · <span>8</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 03: Govern -->
+        <div class="hiw-panel" data-panel="govern">
+          <div class="hiw-panel-header">
+            <div class="hiw-panel-title">GOVERNANCE OVERVIEW</div>
+            <div class="hiw-panel-badge">91 / 100</div>
+          </div>
+          <div class="hiw-panel-body">
+            <div class="gov-panel-score">
+              <div class="gov-panel-score-circle">91%</div>
+              <div class="gov-panel-score-detail">
+                <span class="gov-panel-score-label">COMPLIANCE RATE · 147 ASSETS</span>
+                <div class="gov-panel-score-counts">
+                  <span style="color: var(--emerald); font-size: 12px;">● 132 Compliant</span>
+                  <span style="color: var(--amber); font-size: 12px;">● 4 Review</span>
+                  <span style="color: var(--red); font-size: 12px;">● 1 At Risk</span>
+                </div>
+              </div>
+            </div>
+            <div class="gov-mini-rule">
+              <span class="gov-mini-rule-name">Sales Copilot</span>
+              <span class="rule-pass">PASS</span>
+            </div>
+            <div class="gov-mini-rule">
+              <span class="gov-mini-rule-name">HR Virtual Agent</span>
+              <span class="rule-review">REVIEW</span>
+            </div>
+            <div class="gov-mini-rule">
+              <span class="gov-mini-rule-name">Support Bot</span>
+              <span class="rule-fail">AT RISK</span>
+            </div>
+            <div class="gov-mini-rule">
+              <span class="gov-mini-rule-name">Contract Reviewer</span>
+              <span class="rule-pass">PASS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile step navigation -->
+      <div class="hiw-mobile-nav" aria-label="Step navigation">
+        <button class="hiw-mobile-btn" onclick="hiwStep(-1, true)" aria-label="Previous step">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="hiw-mobile-dots" role="tablist" aria-label="Step indicators">
+          <button class="hiw-mobile-dot active" data-step="connect" onclick="switchHiwTab('connect')" aria-label="Step 1"></button>
+          <button class="hiw-mobile-dot" data-step="discover" onclick="switchHiwTab('discover')" aria-label="Step 2"></button>
+          <button class="hiw-mobile-dot" data-step="govern" onclick="switchHiwTab('govern')" aria-label="Step 3"></button>
+        </div>
+        <button class="hiw-mobile-btn" onclick="hiwStep(1, true)" aria-label="Next step">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Features / Pillars -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header animate-on-scroll">
+      <div class="section-label">The Platform</div>
+      <h2>Everything you need to <em>accelerate AI with confidence.</em></h2>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar animate-on-scroll">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="pillar-num">01 — AUTO-DISCOVERY</div>
+        <h3>See your full AI landscape</h3>
+        <p>Connect once. TowerIQ scans AI platforms, your identity provider, and developer tools — building a living inventory of every agent, bot, model, flow, and SaaS AI app across your organization. You can't accelerate what you can't see.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">147</div>
+          <div class="pillar-metric-label">assets discovered across 5 platforms</div>
+        </div>
+      </div>
+      <div class="pillar animate-on-scroll" style="transition-delay: 0.1s;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="pillar-num">02 — GOVERNANCE THAT ENABLES</div>
+        <h3>Guardrails that green-light, not gate-keep</h3>
+        <p>Define policies in plain language or upload existing documents. TowerIQ evaluates every asset continuously — so compliant tools get approved faster and risks surface before they become incidents. Governance as an accelerator, not a bottleneck.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">91</div>
+          <div class="pillar-metric-label">portfolio health score (out of 100)</div>
+        </div>
+      </div>
+      <div class="pillar animate-on-scroll" style="transition-delay: 0.2s;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="pillar-num">03 — SPEND INTELLIGENCE</div>
+        <h3>Invest with clarity, not guesswork</h3>
+        <p>See exactly where your AI budget goes — by platform, department, and tool. Spot duplicate spend, idle licenses, and runaway LLM costs. Reallocate savings toward the AI bets that are actually working.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">10–30%</div>
+          <div class="pillar-metric-label">typical savings from AI portfolio rationalization (Bain)</div>
+        </div>
+      </div>
+      <div class="pillar animate-on-scroll" style="transition-delay: 0.3s;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 21l3 3V10a8 8 0 0 0-8-8z"/></svg>
+        </div>
+        <div class="pillar-num">04 — SHADOW AI DETECTION</div>
+        <h3>Find the AI you don't know about</h3>
+        <p>Connect your identity provider and TowerIQ reveals every AI SaaS tool employees signed up for — with or without IT approval. See who's using what, what data it can access, and which tools need governance.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">40+</div>
+          <div class="pillar-metric-label">known AI tools detected via Entra ID + GitHub</div>
+        </div>
+      </div>
+      <div class="pillar animate-on-scroll" style="transition-delay: 0.4s;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="pillar-num">05 — LICENSE COST TRACKING</div>
+        <h3>Know exactly what AI costs you</h3>
+        <p>Track every AI license contract — Copilot, ChatGPT, GitHub Copilot, Claude — in one place. See utilization rates, spot unused seats, and get alerted before renewals. Import via CSV or auto-sync from Microsoft Admin Center.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">$0</div>
+          <div class="pillar-metric-label">wasted on idle licenses (that's the goal)</div>
+        </div>
+      </div>
+      <div class="pillar animate-on-scroll" style="transition-delay: 0.5s;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="pillar-num">06 — ADOPTION & ROI</div>
+        <h3>Double down on what's working</h3>
+        <p>Department-level adoption heatmaps, utilization trends, and ROI metrics. Know which AI investments are delivering value — and make the case to expand them. Give your board the evidence, not anecdotes.</p>
+        <div class="pillar-metric">
+          <div class="pillar-metric-value">8</div>
+          <div class="pillar-metric-label">departments tracked with usage analytics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Governance -->
+<section class="governance" id="governance">
+  <div class="container">
+    <div class="gov-grid">
+      <div class="gov-content animate-on-scroll">
+        <div class="section-label">Governance Engine</div>
+        <h2>Governance that <em>accelerates</em> — not one that slows you down.</h2>
+        <p>Upload your AI governance policy as a PDF. TowerIQ extracts rules, maps them to your asset inventory, and evaluates continuously. Compliant tools get green-lit faster. Risks surface before they become incidents. Always human-in-the-loop.</p>
+        <ul class="gov-features">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Vendor allowlist and blocklist enforcement across all platforms</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Data classification checks — flag PII and restricted data exposure</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Exception workflows with time-bounded approvals</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Immutable audit trail — every evaluation, override, and exception</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">AI-powered policy extraction — upload a PDF, get rules automatically</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Budget tracking with spend alerts and renewal calendar</span></li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span class="gov-feat-text">Shadow AI detection via identity provider signals</span></li>
+        </ul>
+      </div>
+      <div class="gov-visual animate-on-scroll" style="transition-delay: 0.1s;">
+        <div class="gov-vis-header">
+          <div class="gov-vis-title">GOVERNANCE POLICY — Q1 2026</div>
+          <div class="gov-score">92 / 100</div>
+        </div>
+        <div class="gov-vis-body">
+          <div class="gov-rule">
+            <span class="gov-rule-name">Approved vendor list</span>
+            <span class="rule-pass">PASS</span>
+          </div>
+          <div class="gov-rule">
+            <span class="gov-rule-name">No PII without review</span>
+            <span class="rule-pass">PASS</span>
+          </div>
+          <div class="gov-rule">
+            <span class="gov-rule-name">Data classification ≤ Confidential</span>
+            <span class="rule-review">REVIEW</span>
+          </div>
+          <div class="gov-rule">
+            <span class="gov-rule-name">Human oversight for high-risk</span>
+            <span class="rule-pass">PASS</span>
+          </div>
+          <div class="gov-rule">
+            <span class="gov-rule-name">Model version currency</span>
+            <span class="rule-review">REVIEW</span>
+          </div>
+          <div class="gov-rule">
+            <span class="gov-rule-name">Budget threshold compliance</span>
+            <span class="rule-fail">ALERT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platforms -->
+<section class="platforms" id="platforms">
+  <div class="container">
+    <div class="animate-on-scroll">
+      <div class="section-label" style="justify-content: center;">Integrations</div>
+      <h2>Connects to <em>where your AI already lives.</em></h2>
+      <p>Read-only connectors for AI platforms, identity providers, and developer tools. Connect in minutes — see every AI tool across your organization, including the ones employees added themselves.</p>
+    </div>
+    <div class="platform-logos animate-on-scroll" style="transition-delay: 0.1s;">
+      <div class="platform-chip"><span class="p-icon p-sf">SF</span> Salesforce AgentForce</div>
+      <div class="platform-chip"><span class="p-icon p-sn">SN</span> ServiceNow</div>
+      <div class="platform-chip"><span class="p-icon p-aws">λ</span> AWS Bedrock</div>
+      <div class="platform-chip"><span class="p-icon p-oai">◎</span> OpenAI</div>
+      <div class="platform-chip"><span class="p-icon p-az">Az</span> Azure OpenAI</div>
+      <div class="platform-chip"><span class="p-icon p-ms">M</span> Microsoft Copilot</div>
+      <div class="platform-chip"><span class="p-icon p-gv">G</span> Google Vertex AI</div>
+      <div class="platform-chip"><span class="p-icon p-en" style="background:#0078D4;color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Microsoft Entra ID</div>
+      <div class="platform-chip"><span class="p-icon p-gh" style="background:#24292F;color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span> GitHub</div>
+      <div class="platform-chip"><span class="p-icon" style="background:#FF6C37;">⟠</span> Anthropic Claude</div>
+      <div class="platform-chip"><span class="p-icon" style="background:#326CE5;color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="18" x2="6" y2="10"/><line x1="12" y1="18" x2="12" y2="6"/><line x1="18" y1="18" x2="18" y2="14"/></svg></span> Databricks</div>
+      <div class="platform-chip"><span class="p-icon" style="background:#00A4EF;color:#fff;"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="9" cy="9" r="2"/><circle cx="15" cy="9" r="2"/><circle cx="9" cy="15" r="2"/><circle cx="15" cy="15" r="2"/></svg></span> Okta</div>
+      <div class="platform-chip"><span class="p-icon" style="background:#7B68EE;">◆</span> Snowflake</div>
+      <div class="platform-chip" style="border-style: dashed; color: var(--gray-500);"><span class="p-icon" style="background: var(--navy-surface); color: var(--gray-500);">+</span> More coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust / Credibility -->
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-content animate-on-scroll">
+        <div class="section-label">Built for Enterprise</div>
+        <h2>Built by a team that knows what <em>enterprise AI actually takes.</em></h2>
+        <p>TowerIQ is built by ShiftX — a team with a decade of Fortune 500 technology delivery, a US patent, and production systems running in the most complex regulated environments. We built this because we've seen the visibility gap firsthand.</p>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+            </div>
+            <h4>Fortune 500 Delivery</h4>
+            <p>Production systems live 5+ years in regulated industries</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg>
+            </div>
+            <h4>US Patent Holder</h4>
+            <p>Patent #11488078 — real engineering depth</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M9 18h6"/><path d="M12 10V7"/><path d="M9 7h6"/><path d="M12 3v1"/></svg>
+            </div>
+            <h4>Anthropic Partner</h4>
+            <p>Strategic partnership with frontier AI</p>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h4>Founder-Led</h4>
+            <p>You work with the people who built it. No middle layer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="trust-security animate-on-scroll" style="transition-delay: 0.1s;">
+        <div class="security-item">
+          <div class="security-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="security-text">
+            <h4>OAuth 2.0 + TLS 1.2+</h4>
+            <p>Industry-standard authentication and encryption in transit</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <div class="security-text">
+            <h4>AES-256 at Rest</h4>
+            <p>All data encrypted with AES-256 at rest on US infrastructure</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="security-text">
+            <h4>MFA + RBAC</h4>
+            <p>Multi-factor authentication and role-based access control</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+          </div>
+          <div class="security-text">
+            <h4>Zero Data Retention</h4>
+            <p>OpenAI and Anthropic under enterprise ZDR terms</p>
+          </div>
+        </div>
+        <div class="security-item">
+          <div class="security-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="security-text">
+            <h4>24-Hour Breach Notification</h4>
+            <p>Committed to rapid incident disclosure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="animate-on-scroll">
+      <h2>Move faster on AI.<br><em>See everything.</em></h2>
+      <p>The organizations that win with AI won't be the most cautious — they'll be the most informed. See what your AI portfolio looks like in 30 minutes.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary" onclick="openModal(event)">Book a Demo →</a>
+        <a href="#features" class="btn-secondary">Explore the Platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-icon">T</div>
+          <div class="nav-logo-content">
+            <div class="nav-logo-text">Tower<span>IQ</span></div>
+            <p class="nav-tagline">Shift to AI. Multiply what matters</p>
+          </div>
+        </a>
+        <p>Enterprise AI portfolio intelligence. One platform for discovery, governance, spend optimization, and ROI tracking.</p>
+        <p style="margin-top: 12px; font-size: 12px; color: var(--gray-600);">A product by <a href="https://shiftx.ai" target="_blank" style="color: var(--copper); text-decoration: none;">ShiftX AI</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#features">Platform</a></li>
+          <li><a href="#governance">Governance</a></li>
+          <li><a href="#platforms">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://shiftx.ai" target="_blank">ShiftX</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#" onclick="openModal(event)">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ShiftX LLC. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Demo Modal -->
+<div class="modal-overlay" id="demoModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3>See TowerIQ in action.</h3>
+    <p>30 minutes. Tailored to your stack. We'll show you what your AI portfolio looks like when you can finally see all of it — and what becomes possible when you can.</p>
+    <div class="modal-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label>Work Email</label>
+          <input type="email" placeholder="jane@company.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" placeholder="Acme Corp">
+        </div>
+        <div class="form-group">
+          <label>Your Role</label>
+          <input type="text" placeholder="CIO, VP Engineering, etc.">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Size</label>
+        <select>
+          <option value="">Select company size...</option>
+          <option>1 – 200 employees</option>
+          <option>201 – 1,000 employees</option>
+          <option>1,001 – 5,000 employees</option>
+          <option>5,000+ employees</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="closeModal()">Book My Demo →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Scroll-based nav background
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Modal
+function openModal(e) {
+  e.preventDefault();
+  if (typeof closeMobileNav === 'function') closeMobileNav();
+  document.getElementById('demoModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('demoModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('demoModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+    if (typeof closeMobileNav === 'function') closeMobileNav();
+  }
+});
+
+// How It Works tab switching + auto-scroll carousel
+const hiwSteps = ['connect', 'discover', 'govern'];
+const HIW_INTERVAL = 3500;
+let hiwTimer = null;
+let hiwPaused = false;
+
+function switchHiwTab(tabId) {
+  document.querySelectorAll('.hiw-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.hiw-panel[data-panel]').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.hiw-tab[data-tab="${tabId}"]`).classList.add('active');
+  document.querySelector(`.hiw-panel[data-panel="${tabId}"]`).classList.add('active');
+  document.querySelectorAll('.hiw-mobile-dot').forEach(dot => {
+    dot.classList.toggle('active', dot.dataset.step === tabId);
+  });
+}
+
+function hiwStep(dir, userInitiated) {
+  const current = document.querySelector('.hiw-tab.active')?.dataset.tab || hiwSteps[0];
+  const idx = hiwSteps.indexOf(current);
+  const next = hiwSteps[(idx + dir + hiwSteps.length) % hiwSteps.length];
+  switchHiwTab(next);
+  if (userInitiated) hiwPauseAndResume();
+}
+
+function hiwStartAuto() {
+  clearInterval(hiwTimer);
+  hiwTimer = setInterval(() => {
+    if (!hiwPaused) hiwStep(1, false);
+  }, HIW_INTERVAL);
+}
+
+function hiwPauseAndResume() {
+  hiwPaused = true;
+  clearTimeout(hiwPaused._t);
+  hiwPaused._t = setTimeout(() => { hiwPaused = false; }, 8000);
+}
+
+// Start auto-scroll when section enters view
+(function () {
+  const section = document.querySelector('.how-it-works');
+  if (!section) return;
+
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      hiwStartAuto();
+    } else {
+      clearInterval(hiwTimer);
+    }
+  }, { threshold: 0.3 });
+  obs.observe(section);
+
+  // Pause on manual button / dot clicks (handled via hiwPauseAndResume in hiwStep)
+  section.querySelector('.hiw-mobile-nav')?.addEventListener('click', () => hiwPauseAndResume());
+  section.querySelector('.hiw-tabs')?.addEventListener('click', () => hiwPauseAndResume());
+
+  // Touch swipe support
+  let startX = 0, startY = 0;
+  section.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  section.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      hiwStep(dx < 0 ? 1 : -1, true);
+    }
+  }, { passive: true });
+})();
+
+// Mobile nav
+function closeMobileNav() {
+  var links = document.getElementById('primary-nav');
+  var overlay = document.getElementById('navOverlay');
+  var toggle = document.getElementById('navToggle');
+  if (links) links.classList.remove('nav-open');
+  if (toggle) {
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+  if (overlay) {
+    overlay.hidden = true;
+    overlay.classList.remove('is-visible');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+  document.body.classList.remove('nav-menu-open');
+}
+
+function toggleMobileNav() {
+  if (window.matchMedia('(min-width: 969px)').matches) return;
+  var links = document.getElementById('primary-nav');
+  var overlay = document.getElementById('navOverlay');
+  var toggle = document.getElementById('navToggle');
+  if (!links) return;
+  var open = !links.classList.contains('nav-open');
+  links.classList.toggle('nav-open', open);
+  if (toggle) {
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  if (overlay) {
+    overlay.hidden = !open;
+    overlay.classList.toggle('is-visible', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+  document.body.classList.toggle('nav-menu-open', open);
+}
+
+var navOverlayEl = document.getElementById('navOverlay');
+if (navOverlayEl) navOverlayEl.addEventListener('click', closeMobileNav);
+
+document.querySelectorAll('#primary-nav a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    closeMobileNav();
+  });
+});
+
+window.addEventListener('resize', function () {
+  if (window.matchMedia('(min-width: 969px)').matches) closeMobileNav();
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// The Challenge — mobile carousel (5s auto-advance + dot indicators)
+// Uses horizontal scroll on the track only — never scrollIntoView (avoids scrolling the whole page).
+(function initProblemStatsCarousel() {
+  const track = document.getElementById('problemStatsTrack');
+  const dotsWrap = document.querySelector('.problem-stats-dots');
+  const problemSection = document.getElementById('problem');
+  if (!track || !dotsWrap) return;
+
+  const cards = track.querySelectorAll('.problem-stat');
+  const dots = dotsWrap.querySelectorAll('.problem-stats-dot');
+  const mq = window.matchMedia('(max-width: 600px)');
+  const INTERVAL_MS = 5000;
+  let timer = null;
+  let scrollSettleTimer = null;
+  let current = 0;
+  let sectionVisible = false;
+
+  function setActive(index) {
+    current = Math.max(0, Math.min(index, cards.length - 1));
+    dots.forEach((dot, j) => {
+      const on = j === current;
+      dot.classList.toggle('active', on);
+      dot.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  function scrollToSlide(index) {
+    const i = ((index % cards.length) + cards.length) % cards.length;
+    const card = cards[i];
+    if (!card) return;
+    var delta = card.getBoundingClientRect().left - track.getBoundingClientRect().left;
+    track.scrollTo({ left: track.scrollLeft + delta, behavior: 'smooth' });
+    setActive(i);
+  }
+
+  function syncCarouselTimer() {
+    stopTimer();
+    if (!mq.matches) return;
+    if (document.hidden) return;
+    if (problemSection && !sectionVisible) return;
+    startTimer();
+  }
+
+  function activeIndexFromScroll() {
+    const tr = track.getBoundingClientRect();
+    let best = 0;
+    let bestOverlap = -1;
+    cards.forEach((card, i) => {
+      const cr = card.getBoundingClientRect();
+      const overlap = Math.min(cr.right, tr.right) - Math.max(cr.left, tr.left);
+      if (overlap > bestOverlap) {
+        bestOverlap = overlap;
+        best = i;
+      }
+    });
+    return best;
+  }
+
+  function onScrollSettled() {
+    setActive(activeIndexFromScroll());
+  }
+
+  function scheduleScrollSync() {
+    clearTimeout(scrollSettleTimer);
+    scrollSettleTimer = setTimeout(onScrollSettled, 80);
+  }
+
+  function stopTimer() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function startTimer() {
+    stopTimer();
+    if (!mq.matches || cards.length === 0) return;
+    timer = setInterval(function () {
+      var next = (current + 1) % cards.length;
+      scrollToSlide(next);
+    }, INTERVAL_MS);
+  }
+
+  function resetTimer() {
+    syncCarouselTimer();
+  }
+
+  track.addEventListener('scroll', scheduleScrollSync, { passive: true });
+  track.addEventListener('touchstart', resetTimer, { passive: true });
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      scrollToSlide(i);
+      resetTimer();
+    });
+  });
+
+  if (problemSection) {
+    var visObs = new IntersectionObserver(
+      function (entries) {
+        sectionVisible = entries[0] && entries[0].isIntersecting;
+        syncCarouselTimer();
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+    );
+    visObs.observe(problemSection);
+  } else {
+    sectionVisible = true;
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    syncCarouselTimer();
+  });
+
+  function applyMq() {
+    if (mq.matches) {
+      setActive(activeIndexFromScroll());
+      syncCarouselTimer();
+    } else {
+      stopTimer();
+      dots.forEach(function (d) {
+        d.classList.remove('active');
+        d.setAttribute('aria-selected', 'false');
+      });
+    }
+  }
+
+  mq.addEventListener('change', applyMq);
+  applyMq();
+})();
+</script>
+
+</body>
+</html>
