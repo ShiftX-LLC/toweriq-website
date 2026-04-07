@@ -12,25 +12,30 @@
 <body>
 
 <!-- Nav -->
-<div class="nav-overlay" id="navOverlay" aria-hidden="true" hidden></div>
+<div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-icon">T</div>
       <div class="nav-logo-content">
         <div class="nav-logo-text">Tower<span>IQ</span></div>
-        <p class="nav-tagline">Shift to AI. Multiply what matters</p>
+        <p class="nav-tagline">Intelligent Command Center</p>
       </div>
     </a>
-    <ul class="nav-links" id="primary-nav">
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#features">Platform</a></li>
-      <li><a href="#platforms">Integrations</a></li>
-      <li><a href="#trust">Security</a></li>
-      <li><a href="https://www.shiftx.ai" target="_blank" rel="noopener noreferrer" class="nav-shiftx">A ShiftX AI Product</a></li>
-      <li><a href="#" class="nav-cta" onclick="openModal(event)">Book a Demo</a></li>
-    </ul>
-    <button type="button" class="nav-toggle" id="navToggle" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-glass">
+        <p class="mobile-nav-label">Navigate</p>
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#features" class="nav-link">Platform</a></li>
+          <li><a href="#platforms" class="nav-link">Integrations</a></li>
+          <li><a href="#trust" class="nav-link">Security</a></li>
+          <li><a href="https://www.shiftx.ai" target="_blank" rel="noopener noreferrer" class="nav-shiftx nav-link">A ShiftX AI Product</a></li>
+          <li><a href="#" class="nav-cta nav-link" onclick="openModal(event)">Book a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <button type="button" class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -449,10 +454,6 @@
         <div class="pillar-num">01 — AUTO-DISCOVERY</div>
         <h3>See your full AI landscape</h3>
         <p>Connect once. TowerIQ scans AI platforms, your identity provider, and developer tools — building a living inventory of every agent, bot, model, flow, and SaaS AI app across your organization. You can't accelerate what you can't see.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">147</div>
-          <div class="pillar-metric-label">assets discovered across 5 platforms</div>
-        </div>
       </div>
       <div class="pillar animate-on-scroll" style="transition-delay: 0.1s;">
         <div class="pillar-icon" aria-hidden="true">
@@ -461,10 +462,6 @@
         <div class="pillar-num">02 — GOVERNANCE THAT ENABLES</div>
         <h3>Guardrails that green-light, not gate-keep</h3>
         <p>Define policies in plain language or upload existing documents. TowerIQ evaluates every asset continuously — so compliant tools get approved faster and risks surface before they become incidents. Governance as an accelerator, not a bottleneck.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">91</div>
-          <div class="pillar-metric-label">portfolio health score (out of 100)</div>
-        </div>
       </div>
       <div class="pillar animate-on-scroll" style="transition-delay: 0.2s;">
         <div class="pillar-icon" aria-hidden="true">
@@ -473,10 +470,6 @@
         <div class="pillar-num">03 — SPEND INTELLIGENCE</div>
         <h3>Invest with clarity, not guesswork</h3>
         <p>See exactly where your AI budget goes — by platform, department, and tool. Spot duplicate spend, idle licenses, and runaway LLM costs. Reallocate savings toward the AI bets that are actually working.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">10–30%</div>
-          <div class="pillar-metric-label">typical savings from AI portfolio rationalization (Bain)</div>
-        </div>
       </div>
       <div class="pillar animate-on-scroll" style="transition-delay: 0.3s;">
         <div class="pillar-icon" aria-hidden="true">
@@ -485,10 +478,6 @@
         <div class="pillar-num">04 — SHADOW AI DETECTION</div>
         <h3>Find the AI you don't know about</h3>
         <p>Connect your identity provider and TowerIQ reveals every AI SaaS tool employees signed up for — with or without IT approval. See who's using what, what data it can access, and which tools need governance.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">40+</div>
-          <div class="pillar-metric-label">known AI tools detected via Entra ID + GitHub</div>
-        </div>
       </div>
       <div class="pillar animate-on-scroll" style="transition-delay: 0.4s;">
         <div class="pillar-icon" aria-hidden="true">
@@ -497,10 +486,6 @@
         <div class="pillar-num">05 — LICENSE COST TRACKING</div>
         <h3>Know exactly what AI costs you</h3>
         <p>Track every AI license contract — Copilot, ChatGPT, GitHub Copilot, Claude — in one place. See utilization rates, spot unused seats, and get alerted before renewals. Import via CSV or auto-sync from Microsoft Admin Center.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">$0</div>
-          <div class="pillar-metric-label">wasted on idle licenses (that's the goal)</div>
-        </div>
       </div>
       <div class="pillar animate-on-scroll" style="transition-delay: 0.5s;">
         <div class="pillar-icon" aria-hidden="true">
@@ -509,10 +494,6 @@
         <div class="pillar-num">06 — ADOPTION & ROI</div>
         <h3>Double down on what's working</h3>
         <p>Department-level adoption heatmaps, utilization trends, and ROI metrics. Know which AI investments are delivering value — and make the case to expand them. Give your board the evidence, not anecdotes.</p>
-        <div class="pillar-metric">
-          <div class="pillar-metric-value">8</div>
-          <div class="pillar-metric-label">departments tracked with usage analytics</div>
-        </div>
       </div>
     </div>
   </div>
@@ -712,7 +693,7 @@
           <div class="nav-logo-icon">T</div>
           <div class="nav-logo-content">
             <div class="nav-logo-text">Tower<span>IQ</span></div>
-            <p class="nav-tagline">Shift to AI. Multiply what matters</p>
+            <p class="nav-tagline">Intelligent Command Center</p>
           </div>
         </a>
         <p>Enterprise AI portfolio intelligence. One platform for discovery, governance, spend optimization, and ROI tracking.</p>
@@ -731,8 +712,6 @@
         <h4>Company</h4>
         <ul>
           <li><a href="https://shiftx.ai" target="_blank">ShiftX</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Careers</a></li>
           <li><a href="#" onclick="openModal(event)">Contact</a></li>
         </ul>
       </div>
@@ -740,9 +719,9 @@
     <div class="footer-bottom">
       <p>© 2026 ShiftX LLC. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
+        <!-- <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <a href="#">Security</a>
+        <a href="#">Security</a> -->
       </div>
     </div>
   </div>
@@ -902,54 +881,53 @@ function hiwPauseAndResume() {
   }, { passive: true });
 })();
 
-// Mobile nav
+// Mobile nav (glassmorphic slide-in panel)
+const menuBtn = document.getElementById('menuBtn');
+const mobOverlay = document.getElementById('mobOverlay');
+const mobileNav = document.getElementById('mobileNav');
+
+function openMobileNav() {
+  if (window.matchMedia('(min-width: 969px)').matches) return;
+  menuBtn.classList.add('open');
+  mobOverlay.classList.add('open');
+  mobileNav.classList.add('mobile-open');
+  menuBtn.setAttribute('aria-expanded', 'true');
+  menuBtn.setAttribute('aria-label', 'Close menu');
+  mobOverlay.setAttribute('aria-hidden', 'false');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('nav-menu-open');
+  document.body.style.overflow = 'hidden';
+}
+
 function closeMobileNav() {
-  var links = document.getElementById('primary-nav');
-  var overlay = document.getElementById('navOverlay');
-  var toggle = document.getElementById('navToggle');
-  if (links) links.classList.remove('nav-open');
-  if (toggle) {
-    toggle.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
+  if (menuBtn) menuBtn.classList.remove('open');
+  if (mobOverlay) {
+    mobOverlay.classList.remove('open');
+    mobOverlay.setAttribute('aria-hidden', 'true');
   }
-  if (overlay) {
-    overlay.hidden = true;
-    overlay.classList.remove('is-visible');
-    overlay.setAttribute('aria-hidden', 'true');
+  if (mobileNav) {
+    mobileNav.classList.remove('mobile-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  }
+  if (menuBtn) {
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open menu');
   }
   document.body.classList.remove('nav-menu-open');
+  document.body.style.overflow = '';
 }
 
-function toggleMobileNav() {
-  if (window.matchMedia('(min-width: 969px)').matches) return;
-  var links = document.getElementById('primary-nav');
-  var overlay = document.getElementById('navOverlay');
-  var toggle = document.getElementById('navToggle');
-  if (!links) return;
-  var open = !links.classList.contains('nav-open');
-  links.classList.toggle('nav-open', open);
-  if (toggle) {
-    toggle.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  }
-  if (overlay) {
-    overlay.hidden = !open;
-    overlay.classList.toggle('is-visible', open);
-    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
-  }
-  document.body.classList.toggle('nav-menu-open', open);
-}
-
-var navOverlayEl = document.getElementById('navOverlay');
-if (navOverlayEl) navOverlayEl.addEventListener('click', closeMobileNav);
-
-document.querySelectorAll('#primary-nav a').forEach(function (a) {
-  a.addEventListener('click', function () {
-    closeMobileNav();
+if (menuBtn && mobOverlay && mobileNav) {
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.contains('open') ? closeMobileNav() : openMobileNav();
   });
-});
+
+  mobOverlay.addEventListener('click', closeMobileNav);
+
+  mobileNav.querySelectorAll('.nav-link').forEach(a => {
+    a.addEventListener('click', closeMobileNav);
+  });
+}
 
 window.addEventListener('resize', function () {
   if (window.matchMedia('(min-width: 969px)').matches) closeMobileNav();
