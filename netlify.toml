@@ -1,0 +1,5 @@
+# Static site: serve repo root. Form submissions + notifications are configured
+# in Netlify: Site configuration → Forms → Notifications (email, Slack, etc.).
+
+[build]
+  publish = "."
