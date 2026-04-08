@@ -439,61 +439,207 @@
   </div>
 </section>
 
-<!-- Features / Pillars -->
+<!-- Features / Platform tabs -->
 <section class="features" id="features">
   <div class="container">
     <div class="features-header animate-on-scroll">
       <div class="section-label">The Platform</div>
       <h2>Everything you need to <em>accelerate AI with confidence.</em></h2>
     </div>
-    <div class="pillar-grid">
-      <div class="pillar animate-on-scroll">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <div class="pillar-num">01 — AUTO-DISCOVERY</div>
-        <h3>See your full AI landscape</h3>
-        <p>Connect once. TowerIQ scans AI platforms, your identity provider, and developer tools — building a living inventory of every agent, bot, model, flow, and SaaS AI app across your organization. You can't accelerate what you can't see.</p>
+
+    <div class="feat-block animate-on-scroll" id="featShowcase">
+      <div class="feat-tabs" role="tablist" aria-label="Platform capabilities">
+        <button type="button" class="feat-tab active" role="tab" id="feat-tab-discovery" aria-selected="true" aria-controls="feat-panel-discovery" data-feat="discovery">Discovery<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
+        <button type="button" class="feat-tab" role="tab" id="feat-tab-governance" aria-selected="false" aria-controls="feat-panel-governance" data-feat="governance" tabindex="-1">Governance<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
+        <button type="button" class="feat-tab" role="tab" id="feat-tab-spend" aria-selected="false" aria-controls="feat-panel-spend" data-feat="spend" tabindex="-1">Spend<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
+        <button type="button" class="feat-tab" role="tab" id="feat-tab-shadow" aria-selected="false" aria-controls="feat-panel-shadow" data-feat="shadow" tabindex="-1">Shadow AI<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
+        <button type="button" class="feat-tab" role="tab" id="feat-tab-licenses" aria-selected="false" aria-controls="feat-panel-licenses" data-feat="licenses" tabindex="-1">Licenses<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
+        <button type="button" class="feat-tab" role="tab" id="feat-tab-roi" aria-selected="false" aria-controls="feat-panel-roi" data-feat="roi" tabindex="-1">Adoption &amp; ROI<span class="feat-tab-progress" aria-hidden="true"><span class="feat-tab-progress-fill"></span></span></button>
       </div>
-      <div class="pillar animate-on-scroll" style="transition-delay: 0.1s;">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+      <div class="feat-showcase">
+      <div class="feat-panels">
+        <!-- Discovery -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-discovery" aria-labelledby="feat-tab-discovery" data-panel="discovery">
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h">AI inventory <span class="feat-mock-pill">Live</span></div>
+                  <table class="feat-mock-table">
+                    <thead><tr><th>Asset</th><th>Platform</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>Sales Copilot</td><td>MS Copilot</td><td><span class="feat-tag feat-tag--ok">Mapped</span></td></tr>
+                      <tr><td>Claims bot</td><td>Bedrock</td><td><span class="feat-tag feat-tag--ok">Mapped</span></td></tr>
+                      <tr><td>HR assistant</td><td>OpenAI</td><td><span class="feat-tag feat-tag--warn">Review</span></td></tr>
+                      <tr><td>Code review</td><td>GitHub</td><td><span class="feat-tag feat-tag--ok">Mapped</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">Auto-discovery</p>
+              <h3>See your full AI landscape</h3>
+              <ul class="feat-points">
+                <li>Connect once. TowerIQ scans AI platforms, your identity provider, and developer tools — building a living inventory of every agent, bot, model, flow, and SaaS AI app across your organization.</li>
+                <li>You can't accelerate what you can't see.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="pillar-num">02 — GOVERNANCE THAT ENABLES</div>
-        <h3>Guardrails that green-light, not gate-keep</h3>
-        <p>Define policies in plain language or upload existing documents. TowerIQ evaluates every asset continuously — so compliant tools get approved faster and risks surface before they become incidents. Governance as an accelerator, not a bottleneck.</p>
+
+        <!-- Governance -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-governance" aria-labelledby="feat-tab-governance" data-panel="governance" hidden>
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h feat-mock-card-h--split"><span>Policy evaluation</span><span class="feat-mock-score">94</span></div>
+                  <div class="feat-mock-rules">
+                    <div class="feat-mock-rule"><span>Approved vendors</span><span class="feat-tag feat-tag--ok">PASS</span></div>
+                    <div class="feat-mock-rule"><span>No PII without review</span><span class="feat-tag feat-tag--ok">PASS</span></div>
+                    <div class="feat-mock-rule"><span>Data classification</span><span class="feat-tag feat-tag--review">REVIEW</span></div>
+                    <div class="feat-mock-rule"><span>High-risk oversight</span><span class="feat-tag feat-tag--ok">PASS</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">Governance that enables</p>
+              <h3>Guardrails that green-light, not gate-keep</h3>
+              <ul class="feat-points">
+                <li>Define policies in plain language or upload existing documents.</li>
+                <li>TowerIQ evaluates every asset continuously — so compliant tools get approved faster and risks surface before they become incidents.</li>
+                <li>Governance as an accelerator, not a bottleneck.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spend -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-spend" aria-labelledby="feat-tab-spend" data-panel="spend" hidden>
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h">Spend by department</div>
+                  <div class="feat-mock-bars">
+                    <div class="feat-mock-bar-row"><span>Engineering</span><div class="feat-mock-bar"><i style="width:88%"></i></div><span class="feat-mock-bar-pct">42%</span></div>
+                    <div class="feat-mock-bar-row"><span>Sales</span><div class="feat-mock-bar"><i style="width:62%"></i></div><span class="feat-mock-bar-pct">28%</span></div>
+                    <div class="feat-mock-bar-row"><span>G&amp;A</span><div class="feat-mock-bar"><i style="width:38%"></i></div><span class="feat-mock-bar-pct">18%</span></div>
+                    <div class="feat-mock-bar-row"><span>Other</span><div class="feat-mock-bar"><i style="width:22%"></i></div><span class="feat-mock-bar-pct">12%</span></div>
+                  </div>
+                  <p class="feat-mock-foot">Duplicate licenses flagged · 3 vendors</p>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">Spend intelligence</p>
+              <h3>Invest with clarity, not guesswork</h3>
+              <ul class="feat-points">
+                <li>See exactly where your AI budget goes — by platform, department, and tool.</li>
+                <li>Spot duplicate spend, idle licenses, and runaway LLM costs.</li>
+                <li>Reallocate savings toward the AI bets that are actually working.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shadow AI -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-shadow" aria-labelledby="feat-tab-shadow" data-panel="shadow" hidden>
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h">Unsanctioned signals</div>
+                  <div class="feat-mock-violations">
+                    <div class="feat-mock-vrow">
+                      <span class="feat-mock-vicon feat-mock-vicon--warn" aria-hidden="true">!</span>
+                      <span class="feat-mock-vtext">New AI SaaS sign-up (marketing)</span>
+                      <span class="feat-tag feat-tag--warn">REVIEW</span>
+                    </div>
+                    <div class="feat-mock-vrow">
+                      <span class="feat-mock-vicon feat-mock-vicon--block" aria-hidden="true">⦸</span>
+                      <span class="feat-mock-vtext">OAuth scope includes customer PII</span>
+                      <span class="feat-tag feat-tag--block">BLOCK</span>
+                    </div>
+                    <div class="feat-mock-vrow">
+                      <span class="feat-mock-vicon feat-mock-vicon--warn" aria-hidden="true">!</span>
+                      <span class="feat-mock-vtext">Shadow ChatGPT workspace detected</span>
+                      <span class="feat-tag feat-tag--warn">REVIEW</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">Shadow AI detection</p>
+              <h3>Find the AI you don’t know about</h3>
+              <ul class="feat-points">
+                <li>Connect your identity provider and TowerIQ reveals every AI SaaS tool employees signed up for — with or without IT approval.</li>
+                <li>See who's using what, what data it can access, and which tools need governance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Licenses -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-licenses" aria-labelledby="feat-tab-licenses" data-panel="licenses" hidden>
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h">License utilization</div>
+                  <div class="feat-mock-lic">
+                    <div class="feat-mock-lic-row"><span>Microsoft Copilot</span><span class="feat-mock-lic-bar"><i style="width:71%"></i></span><span>71% seats</span></div>
+                    <div class="feat-mock-lic-row"><span>ChatGPT Enterprise</span><span class="feat-mock-lic-bar"><i style="width:54%"></i></span><span>54% seats</span></div>
+                    <div class="feat-mock-lic-row"><span>GitHub Copilot</span><span class="feat-mock-lic-bar"><i style="width:89%"></i></span><span>89% seats</span></div>
+                  </div>
+                  <p class="feat-mock-foot">Renewal in 42 days · 2 contracts up for review</p>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">License cost tracking</p>
+              <h3>Know exactly what AI costs you</h3>
+              <ul class="feat-points">
+                <li>Track every AI license contract — Copilot, ChatGPT, GitHub Copilot, Claude — in one place.</li>
+                <li>See utilization rates, spot unused seats, and get alerted before renewals.</li>
+                <li>Import via CSV or auto-sync from Microsoft Admin Center.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROI -->
+        <div class="feat-panel" role="tabpanel" id="feat-panel-roi" aria-labelledby="feat-tab-roi" data-panel="roi" hidden>
+          <div class="feat-panel-inner">
+            <div class="feat-mock" aria-hidden="true">
+              <div class="feat-mock-canvas">
+                <div class="feat-mock-card">
+                  <div class="feat-mock-card-h">Adoption &amp; ROI</div>
+                  <div class="feat-mock-kpis">
+                    <div class="feat-mock-kpi"><span class="feat-mock-kpi-val">+34%</span><span class="feat-mock-kpi-lbl">YoY usage</span></div>
+                    <div class="feat-mock-kpi"><span class="feat-mock-kpi-val">$1.2M</span><span class="feat-mock-kpi-lbl">Est. savings</span></div>
+                    <div class="feat-mock-kpi"><span class="feat-mock-kpi-val">18</span><span class="feat-mock-kpi-lbl">Depts. active</span></div>
+                  </div>
+                  <div class="feat-mock-spark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-copy">
+              <p class="feat-eyebrow">Adoption &amp; ROI</p>
+              <h3>Double down on what’s working</h3>
+              <ul class="feat-points">
+                <li>Department-level adoption heatmaps, utilization trends, and ROI metrics.</li>
+                <li>Know which AI investments are delivering value — and make the case to expand them.</li>
+                <li>Give your board the evidence, not anecdotes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="pillar animate-on-scroll" style="transition-delay: 0.2s;">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="pillar-num">03 — SPEND INTELLIGENCE</div>
-        <h3>Invest with clarity, not guesswork</h3>
-        <p>See exactly where your AI budget goes — by platform, department, and tool. Spot duplicate spend, idle licenses, and runaway LLM costs. Reallocate savings toward the AI bets that are actually working.</p>
-      </div>
-      <div class="pillar animate-on-scroll" style="transition-delay: 0.3s;">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 21l3 3V10a8 8 0 0 0-8-8z"/></svg>
-        </div>
-        <div class="pillar-num">04 — SHADOW AI DETECTION</div>
-        <h3>Find the AI you don't know about</h3>
-        <p>Connect your identity provider and TowerIQ reveals every AI SaaS tool employees signed up for — with or without IT approval. See who's using what, what data it can access, and which tools need governance.</p>
-      </div>
-      <div class="pillar animate-on-scroll" style="transition-delay: 0.4s;">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-        </div>
-        <div class="pillar-num">05 — LICENSE COST TRACKING</div>
-        <h3>Know exactly what AI costs you</h3>
-        <p>Track every AI license contract — Copilot, ChatGPT, GitHub Copilot, Claude — in one place. See utilization rates, spot unused seats, and get alerted before renewals. Import via CSV or auto-sync from Microsoft Admin Center.</p>
-      </div>
-      <div class="pillar animate-on-scroll" style="transition-delay: 0.5s;">
-        <div class="pillar-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <div class="pillar-num">06 — ADOPTION & ROI</div>
-        <h3>Double down on what's working</h3>
-        <p>Department-level adoption heatmaps, utilization trends, and ROI metrics. Know which AI investments are delivering value — and make the case to expand them. Give your board the evidence, not anecdotes.</p>
       </div>
     </div>
   </div>
@@ -727,44 +873,69 @@
   </div>
 </footer>
 
-<!-- Demo Modal -->
+<!-- Demo Modal: form step → success step after Netlify submit -->
 <div class="modal-overlay" id="demoModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <h3>See TowerIQ in action.</h3>
-    <p>30 minutes. Tailored to your stack. We'll show you what your AI portfolio looks like when you can finally see all of it — and what becomes possible when you can.</p>
-    <div class="modal-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Jane Smith">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalFormTitle">
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+
+    <div class="modal-step" id="modalStepForm">
+      <h3 id="modalFormTitle">See TowerIQ in action.</h3>
+      <p class="modal-intro">30 minutes. Tailored to your stack. We'll show you what your AI portfolio looks like when you can finally see all of it — and what becomes possible when you can.</p>
+      <form
+        class="modal-form"
+        id="contactForm"
+        name="contact"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact">
+        <p class="netlify-honeypot" aria-hidden="true">
+          <label>Do not fill this in: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-full-name">Full Name</label>
+            <input id="contact-full-name" type="text" name="full-name" placeholder="Jane Smith" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Work Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="jane@company.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-company">Company</label>
+            <input id="contact-company" type="text" name="company" placeholder="Acme Corp" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="contact-role">Your Role</label>
+            <input id="contact-role" type="text" name="role" placeholder="CIO, VP Engineering, etc." autocomplete="organization-title">
+          </div>
         </div>
         <div class="form-group">
-          <label>Work Email</label>
-          <input type="email" placeholder="jane@company.com">
+          <label for="contact-company-size">Company Size</label>
+          <select id="contact-company-size" name="company-size">
+            <option value="">Select company size...</option>
+            <option value="1 – 200 employees">1 – 200 employees</option>
+            <option value="201 – 1,000 employees">201 – 1,000 employees</option>
+            <option value="1,001 – 5,000 employees">1,001 – 5,000 employees</option>
+            <option value="5,000+ employees">5,000+ employees</option>
+          </select>
         </div>
+        <button type="submit" class="btn-primary" id="contactSubmit">Book My Demo →</button>
+        <p class="modal-form-message" id="contactFormMessage" role="alert" aria-live="assertive" hidden></p>
+      </form>
+    </div>
+
+    <div class="modal-step modal-step--success" id="modalStepSuccess" hidden>
+      <div class="modal-success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Company</label>
-          <input type="text" placeholder="Acme Corp">
-        </div>
-        <div class="form-group">
-          <label>Your Role</label>
-          <input type="text" placeholder="CIO, VP Engineering, etc.">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Company Size</label>
-        <select>
-          <option value="">Select company size...</option>
-          <option>1 – 200 employees</option>
-          <option>201 – 1,000 employees</option>
-          <option>1,001 – 5,000 employees</option>
-          <option>5,000+ employees</option>
-        </select>
-      </div>
-      <button class="btn-primary" onclick="closeModal()">Book My Demo →</button>
+      <h3 id="modalSuccessTitle">Demo booked</h3>
+      <p class="modal-intro">Thanks — we received your details. We'll email you shortly to coordinate a time that works for your team.</p>
+      <button type="button" class="btn-primary modal-success-done" id="modalSuccessDone">Done</button>
     </div>
   </div>
 </div>
@@ -787,10 +958,23 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-// Modal
+// Modal — booking form ↔ success step ("Demo booked")
+function resetDemoModalSteps() {
+  const formStep = document.getElementById('modalStepForm');
+  const successStep = document.getElementById('modalStepSuccess');
+  const modal = document.querySelector('#demoModal .modal');
+  if (formStep && successStep) {
+    formStep.hidden = false;
+    successStep.hidden = true;
+  }
+  if (modal) modal.setAttribute('aria-labelledby', 'modalFormTitle');
+  document.getElementById('contactForm')?.reset();
+}
+
 function openModal(e) {
   e.preventDefault();
   if (typeof closeMobileNav === 'function') closeMobileNav();
+  resetDemoModalSteps();
   document.getElementById('demoModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -798,11 +982,62 @@ function openModal(e) {
 function closeModal() {
   document.getElementById('demoModal').classList.remove('active');
   document.body.style.overflow = '';
+  resetDemoModalSteps();
 }
 
 document.getElementById('demoModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
+
+(function () {
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('contactSubmit');
+  const msg = document.getElementById('contactFormMessage');
+  const formStep = document.getElementById('modalStepForm');
+  const successStep = document.getElementById('modalStepSuccess');
+  const modalEl = document.querySelector('#demoModal .modal');
+  const doneBtn = document.getElementById('modalSuccessDone');
+  if (!form || !btn || !msg) return;
+
+  if (doneBtn) {
+    doneBtn.addEventListener('click', function () {
+      closeModal();
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    const label = btn.textContent;
+    btn.textContent = 'Sending…';
+    msg.hidden = true;
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Request failed');
+        if (formStep && successStep && modalEl) {
+          formStep.hidden = true;
+          successStep.hidden = false;
+          modalEl.setAttribute('aria-labelledby', 'modalSuccessTitle');
+          doneBtn?.focus();
+        }
+        form.reset();
+      })
+      .catch(function () {
+        msg.textContent = 'Something went wrong. Please try again or reach out through shiftx.ai.';
+        msg.classList.add('modal-form-message--error');
+        msg.hidden = false;
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+  });
+})();
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
@@ -879,6 +1114,186 @@ function hiwPauseAndResume() {
       hiwStep(dx < 0 ? 1 : -1, true);
     }
   }, { passive: true });
+})();
+
+// Platform section — tabs + auto-rotate (5s) + progress bar (desktop); stacked cards (mobile ≤968px)
+const FEAT_ORDER = ['discovery', 'governance', 'spend', 'shadow', 'licenses', 'roi'];
+const FEAT_INTERVAL = 5000;
+const FEAT_MOBILE_MQ = '(max-width: 968px)';
+let featPaused = false;
+let featPauseStarted = 0;
+let featCycleStart = 0;
+let featRafId = null;
+let featSectionActive = false;
+
+function featIsMobileLayout() {
+  return window.matchMedia(FEAT_MOBILE_MQ).matches;
+}
+
+function featProgressEl() {
+  return document.querySelector('.feat-tab.active .feat-tab-progress-fill');
+}
+
+function resetFeatCycle() {
+  featCycleStart = Date.now();
+  document.querySelectorAll('.feat-tab-progress-fill').forEach(function (el) {
+    el.style.transform = 'scaleX(0)';
+  });
+}
+
+function switchFeatTab(id, opts) {
+  const user = opts && opts.user;
+  document.querySelectorAll('.feat-tab').forEach(btn => {
+    const on = btn.dataset.feat === id;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-selected', String(on));
+    btn.tabIndex = on ? 0 : -1;
+  });
+  document.querySelectorAll('.feat-panel').forEach(panel => {
+    panel.hidden = panel.dataset.panel !== id;
+  });
+  resetFeatCycle();
+  if (user && featSectionActive && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    featEnsureAnimLoop();
+  }
+}
+
+function featNext() {
+  const cur = document.querySelector('.feat-tab.active')?.dataset.feat || FEAT_ORDER[0];
+  const idx = FEAT_ORDER.indexOf(cur);
+  const next = FEAT_ORDER[(idx + 1) % FEAT_ORDER.length];
+  switchFeatTab(next, {});
+}
+
+function featTick() {
+  if (!featSectionActive || featIsMobileLayout()) {
+    featRafId = null;
+    return;
+  }
+
+  if (!featPaused) {
+    const now = Date.now();
+    const elapsed = now - featCycleStart;
+    const p = Math.min(1, elapsed / FEAT_INTERVAL);
+    const el = featProgressEl();
+    if (el) el.style.transform = 'scaleX(' + p + ')';
+    if (elapsed >= FEAT_INTERVAL) {
+      featNext();
+    }
+  }
+
+  featRafId = requestAnimationFrame(featTick);
+}
+
+function featEnsureAnimLoop() {
+  if (featRafId != null) return;
+  featRafId = requestAnimationFrame(featTick);
+}
+
+function featStopAnimLoop() {
+  if (featRafId != null) {
+    cancelAnimationFrame(featRafId);
+    featRafId = null;
+  }
+}
+
+(function () {
+  const wrap = document.getElementById('featShowcase');
+  const section = document.getElementById('features');
+  if (!wrap || !section) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function featApplyLayout() {
+    const mobile = featIsMobileLayout();
+    wrap.classList.toggle('feat-block--mobile', mobile);
+    const tabsRow = wrap.querySelector('.feat-tabs');
+    if (tabsRow) {
+      tabsRow.setAttribute('aria-hidden', mobile ? 'true' : 'false');
+    }
+
+    if (mobile) {
+      featSectionActive = false;
+      featStopAnimLoop();
+      wrap.querySelectorAll('.feat-panel').forEach(function (p) {
+        p.hidden = false;
+      });
+    } else {
+      const active = document.querySelector('.feat-tab.active')?.dataset.feat || 'discovery';
+      wrap.querySelectorAll('.feat-panel').forEach(function (p) {
+        p.hidden = p.dataset.panel !== active;
+      });
+      switchFeatTab(active, {});
+      if (!reduceMotion) {
+        const rect = section.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          featSectionActive = true;
+          resetFeatCycle();
+          featEnsureAnimLoop();
+        }
+      }
+    }
+  }
+
+  wrap.addEventListener('mouseenter', () => {
+    if (featIsMobileLayout()) return;
+    featPaused = true;
+    featPauseStarted = Date.now();
+  });
+  wrap.addEventListener('mouseleave', () => {
+    if (featIsMobileLayout()) return;
+    if (featPaused) {
+      featCycleStart += Date.now() - featPauseStarted;
+    }
+    featPaused = false;
+  });
+
+  wrap.querySelectorAll('.feat-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchFeatTab(btn.dataset.feat, { user: true }));
+  });
+
+  const tabsEl = wrap.querySelector('.feat-tabs');
+  if (tabsEl) {
+    tabsEl.addEventListener('keydown', e => {
+      if (featIsMobileLayout()) return;
+      const i = FEAT_ORDER.indexOf(document.querySelector('.feat-tab.active')?.dataset.feat);
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        switchFeatTab(FEAT_ORDER[(i + 1) % FEAT_ORDER.length], { user: true });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        switchFeatTab(FEAT_ORDER[(i - 1 + FEAT_ORDER.length) % FEAT_ORDER.length], { user: true });
+      }
+    });
+  }
+
+  let featResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(featResizeTimer);
+    featResizeTimer = setTimeout(featApplyLayout, 120);
+  });
+  window.matchMedia(FEAT_MOBILE_MQ).addEventListener('change', featApplyLayout);
+
+  featApplyLayout();
+
+  if (reduceMotion) {
+    if (tabsEl) tabsEl.classList.add('feat-tabs--static');
+  } else {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        if (!featIsMobileLayout()) {
+          featSectionActive = true;
+          resetFeatCycle();
+          featEnsureAnimLoop();
+        }
+      } else {
+        featSectionActive = false;
+        featStopAnimLoop();
+      }
+    }, { threshold: 0.2 });
+    obs.observe(section);
+  }
 })();
 
 // Mobile nav (glassmorphic slide-in panel)
