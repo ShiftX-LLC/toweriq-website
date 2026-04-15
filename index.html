@@ -200,7 +200,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1699,7 +1700,7 @@
 </nav>
 
 <!-- ═══════════════════════════════════════════ MOBILE DRAWER ═══ -->
-<aside class="mobile-drawer mobile-only" id="mobile-drawer" aria-hidden="true">
+<aside class="mobile-drawer mobile-only" id="mobile-drawer" aria-hidden="true" inert>
   <a href="#challenge" onclick="closeDrawer()">The Problem</a>
   <a href="#platform" onclick="closeDrawer()">Solution</a>
   <a href="#platform" onclick="selectFeature(1);closeDrawer()">AI Governance</a>
@@ -2929,8 +2930,8 @@
               <input type="text" name="company" required class="form-input" placeholder="Acme Corp" />
             </div>
             <div class="form-group">
-              <label class="form-label">Your Role</label>
-              <select name="role" required class="form-input form-select">
+              <label class="form-label" for="contact-role">Your Role</label>
+              <select id="contact-role" name="role" required class="form-input form-select">
                 <option value="">Select role</option>
                 <option>CEO</option>
                 <option>CIO</option>
@@ -2944,8 +2945,8 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">How can we help?</label>
-            <select name="inquiry_type" required class="form-input form-select">
+            <label class="form-label" for="contact-inquiry">How can we help?</label>
+            <select id="contact-inquiry" name="inquiry_type" required class="form-input form-select">
               <option value="">Select inquiry type</option>
               <option>General Question</option>
               <option>Request a Demo</option>
@@ -3042,8 +3043,8 @@
               <input type="text" name="company" required class="form-input" placeholder="Acme Corp" />
             </div>
             <div>
-              <label class="form-label">Your Role</label>
-              <select name="role" required class="form-input">
+              <label class="form-label" for="waitlist-role">Your Role</label>
+              <select id="waitlist-role" name="role" required class="form-input">
                 <option value="">Select role</option>
                 <option>CIO</option>
                 <option>CTO</option>
@@ -3096,8 +3097,8 @@
         <input class="form-input" type="text" placeholder="Acme Corp" />
       </div>
       <div class="form-group">
-        <label class="form-label">Your Role</label>
-        <select class="form-input form-select">
+        <label class="form-label" for="demo-role">Your Role</label>
+        <select id="demo-role" class="form-input form-select">
           <option value="">Select your role</option>
           <option>CEO</option>
           <option>CIO / CTO</option>
@@ -3410,14 +3411,14 @@
     const btn = document.getElementById('hamburger-btn');
     const drawer = document.getElementById('mobile-drawer');
     if (btn) btn.setAttribute('aria-expanded', open);
-    if (drawer) drawer.setAttribute('aria-hidden', !open);
+    if (drawer) { drawer.setAttribute('aria-hidden', !open); open ? drawer.removeAttribute('inert') : drawer.setAttribute('inert', ''); }
   }
   function closeDrawer() {
     document.body.classList.remove('drawer-open');
     const btn = document.getElementById('hamburger-btn');
     const drawer = document.getElementById('mobile-drawer');
     if (btn) btn.setAttribute('aria-expanded', 'false');
-    if (drawer) drawer.setAttribute('aria-hidden', 'true');
+    if (drawer) { drawer.setAttribute('aria-hidden', 'true'); drawer.setAttribute('inert', ''); }
   }
 
   // ── About modal ──
