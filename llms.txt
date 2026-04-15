@@ -1,0 +1,34 @@
+# TowerIQ — AI Portfolio Intelligence Platform
+
+> TowerIQ is the AI Portfolio Intelligence platform for CIOs and technology leaders. It auto-discovers, governs, and optimizes every AI deployment across your organization.
+
+TowerIQ gives technology leaders a unified view of every AI deployment — what it costs, what it risks, and what it's worth. Know every AI. Govern with confidence. Optimize every dollar.
+
+## Core Capabilities
+
+- **AI Auto-Discovery**: Automatically detect and catalog every AI tool, model, and deployment across your enterprise — including shadow AI.
+- **AI Governance**: Enforce policies aligned with EU AI Act, ISO 42001, NIST AI RMF, and SR 11-7 compliance frameworks.
+- **Cost & ROI Optimization**: Track AI spend across departments and optimize investments with full cost attribution and ROI analysis.
+- **Risk Management**: Continuously assess AI risk across bias, security, compliance, and operational dimensions.
+- **Integration Hub**: Connects to your existing tech stack — ServiceNow, Jira, Slack, SSO providers, and more.
+
+## Industries Served
+
+- Financial Services & Banking
+- Healthcare & Life Sciences
+- Government & Public Sector
+- Technology & SaaS
+- Manufacturing & Supply Chain
+
+## Company
+
+- **Company**: ShiftX AI, Inc.
+- **Product**: TowerIQ
+- **Website**: https://toweriq.ai
+- **Contact**: contact@toweriq.ai
+
+## Pages
+
+- [Home](https://toweriq.ai/)
+- [Blog](https://toweriq.ai/blog/)
+- [Why Enterprise AI Governance Is No Longer Optional in 2026](https://toweriq.ai/blog/enterprise-ai-governance-2026.html)
