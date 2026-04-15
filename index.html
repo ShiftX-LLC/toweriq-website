@@ -1636,6 +1636,15 @@
   <input type="text" name="role" />
   <input type="text" name="interest" />
 </form>
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="first_name" />
+  <input type="text" name="last_name" />
+  <input type="email" name="email" />
+  <input type="text" name="company" />
+  <input type="text" name="role" />
+  <input type="text" name="inquiry_type" />
+  <input type="text" name="message" />
+</form>
 
 <!-- ═══════════════════════════════════════════ ANNOUNCEMENT BAR ═══ -->
 <div class="announce-bar" id="announce-bar">
@@ -2893,60 +2902,65 @@
         <h3 class="modal-title">Send us a message</h3>
         <p class="modal-sub">Fill in the form and we'll get back to you within one business day.</p>
 
-        <div class="contact-form-row">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="Sarah" />
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitContact(event)">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+
+          <div class="contact-form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" name="first_name" required class="form-input" placeholder="Sarah" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" name="last_name" required class="form-input" placeholder="Chen" />
+            </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" placeholder="Chen" />
+            <label class="form-label">Work Email</label>
+            <input type="email" name="email" required class="form-input" placeholder="sarah.chen@company.com" />
           </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Work Email</label>
-          <input type="email" class="form-input" placeholder="sarah.chen@company.com" />
-        </div>
-        <div class="contact-form-row">
-          <div class="form-group">
-            <label class="form-label">Company</label>
-            <input type="text" class="form-input" placeholder="Acme Corp" />
+          <div class="contact-form-row">
+            <div class="form-group">
+              <label class="form-label">Company</label>
+              <input type="text" name="company" required class="form-input" placeholder="Acme Corp" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Role</label>
+              <select name="role" required class="form-input form-select">
+                <option value="">Select role</option>
+                <option>CEO</option>
+                <option>CIO</option>
+                <option>CTO</option>
+                <option>VP / Director of Technology</option>
+                <option>CISO / Risk &amp; Compliance</option>
+                <option>CFO / Finance</option>
+                <option>IT Leadership</option>
+                <option>Other</option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Your Role</label>
-            <select class="form-input form-select">
-              <option value="">Select role</option>
-              <option>CEO</option>
-              <option>CIO</option>
-              <option>CTO</option>
-              <option>VP / Director of Technology</option>
-              <option>CISO / Risk &amp; Compliance</option>
-              <option>CFO / Finance</option>
-              <option>IT Leadership</option>
-              <option>Other</option>
+            <label class="form-label">How can we help?</label>
+            <select name="inquiry_type" required class="form-input form-select">
+              <option value="">Select inquiry type</option>
+              <option>General Question</option>
+              <option>Request a Demo</option>
+              <option>Early Access / Waitlist</option>
+              <option>Partnership Opportunity</option>
+              <option>Press / Media Inquiry</option>
+              <option>Security Disclosure</option>
             </select>
           </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">How can we help?</label>
-          <select class="form-input form-select">
-            <option value="">Select inquiry type</option>
-            <option>General Question</option>
-            <option>Request a Demo</option>
-            <option>Early Access / Waitlist</option>
-            <option>Partnership Opportunity</option>
-            <option>Press / Media Inquiry</option>
-            <option>Security Disclosure</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-input" rows="3" placeholder="Tell us what's on your mind..."></textarea>
-        </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea name="message" class="form-input" rows="3" placeholder="Tell us what's on your mind..."></textarea>
+          </div>
 
-        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:0.9rem" onclick="submitContact()">
-          Send Message →
-        </button>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.9rem">
+            Send Message →
+          </button>
+        </form>
       </div>
 
       <div id="contact-success-view" style="display:none">
@@ -3230,14 +3244,29 @@
     setTimeout(() => {
       document.getElementById('contact-form-view').style.display = '';
       document.getElementById('contact-success-view').style.display = 'none';
+      document.getElementById('contact-form').reset();
     }, 300);
   }
   function closeContactOutside(e) {
     if (e.target === document.getElementById('contact-modal')) closeContact();
   }
-  function submitContact() {
-    document.getElementById('contact-form-view').style.display = 'none';
-    document.getElementById('contact-success-view').style.display = '';
+  function submitContact(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    }).then(function(res) {
+      if (res.ok) {
+        document.getElementById('contact-form-view').style.display = 'none';
+        document.getElementById('contact-success-view').style.display = '';
+      }
+    }).catch(function() {
+      document.getElementById('contact-form-view').style.display = 'none';
+      document.getElementById('contact-success-view').style.display = '';
+    });
   }
 
   // ── Waitlist modal ──
