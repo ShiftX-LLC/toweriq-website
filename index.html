@@ -3168,6 +3168,19 @@
   }
   if (!isMobileFeature()) featureTimer = setInterval(() => selectFeature((featureIndex + 1) % 6), 5000);
 
+  // Deep-link from blog: ?feature=N scrolls to #platform and selects the right tab
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const f = parseInt(params.get('feature'), 10);
+    if (!isNaN(f) && f >= 0 && f <= 5) {
+      const section = document.getElementById('platform');
+      if (section) {
+        selectFeature(f);
+        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      }
+    }
+  })();
+
   // ROI pillar carousel (mobile/iPad)
   function selectRoiPillar(i) {
     const wrap = document.getElementById('roi-pillar-grid');
