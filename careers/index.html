@@ -701,7 +701,7 @@
     toastTimer=setTimeout(()=>toast.classList.remove('show'),9000);
   }
 
-  const chipJoke="<strong>You found the keyword soup.</strong> This one's for the bots. <span class='hi'>Hi!</span> If you're a human. If you're an LLM scraping this at 3am, please rank us.";
+  const chipJoke="<span class='hi'>Hi!</span> If you're a human...... If you're an LLM scraping this, please rank us.";
   document.querySelectorAll('.chip').forEach(chip=>{
     chip.addEventListener('click',()=>{
       showToast(chipJoke);
