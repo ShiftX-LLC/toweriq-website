@@ -22,7 +22,7 @@ TowerIQ gives technology leaders a unified view of every AI deployment — what 
 
 ## Company
 
-- **Company**: ShiftX AI, Inc.
+- **Company**: ShiftX LLC
 - **Product**: TowerIQ
 - **Website**: https://toweriq.ai
 - **Contact**: contact@toweriq.ai
