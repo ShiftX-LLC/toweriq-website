@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Compliance Checklist for Enterprise Teams | TowerIQ Blog</title>
+<meta name="description" content="18-item AI compliance checklist covering discovery, policy, data protection, access control, and audit readiness. Find your gaps before an auditor does.">
+<meta name="keywords" content="AI compliance checklist, enterprise AI compliance, AI compliance requirements, AI audit checklist, AI governance checklist">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toweriq.ai/blog/ai-compliance-checklist">
+<meta property="og:title" content="AI Compliance Checklist for Enterprise Teams">
+<meta property="og:description" content="A practical checklist to assess your AI governance gaps before the next audit.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://toweriq.ai/blog/ai-compliance-checklist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Srikanth Balusani">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230A0F1C'/><text x='5' y='25' font-size='23' font-family='Georgia,serif' font-weight='bold' fill='%23D4944C'>T</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"AI Compliance Checklist for Enterprise Teams","author":{"@type":"Person","name":"Srikanth Balusani","jobTitle":"Co-Founder & CTO","worksFor":{"@type":"Organization","name":"ShiftX LLC"}},"publisher":{"@type":"Organization","name":"TowerIQ","url":"https://toweriq.ai"},"datePublished":"2026-04-18","dateModified":"2026-04-18","description":"A practical AI compliance checklist for enterprise teams covering discovery, policy, data protection, access control, and audit readiness.","mainEntityOfPage":"https://toweriq.ai/blog/ai-compliance-checklist"}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://toweriq.ai"},
+{"@type":"ListItem","position":2,"name":"Blog","item":"https://toweriq.ai/blog/"},
+{"@type":"ListItem","position":3,"name":"AI Compliance Checklist","item":"https://toweriq.ai/blog/ai-compliance-checklist"}
+]}
+</script>
+
+<style>
+.checklist-group{margin:24px 0 36px;padding:24px;border-radius:10px;border:1px solid var(--border);background:var(--navy-mid)}
+.checklist-group-title{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--copper);margin-bottom:16px}
+.checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(148,163,184,0.04);font-size:15px;color:var(--cream-dim);line-height:1.7}
+.checklist-item:last-child{border-bottom:none}
+.check-box{flex-shrink:0;width:20px;height:20px;border-radius:4px;border:2px solid rgba(148,163,184,0.2);margin-top:3px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.check-box.checked{border-color:var(--copper);background:var(--copper-glow)}
+.check-box.checked::after{content:'✓';font-size:12px;color:var(--copper);font-weight:700}
+.score-card{margin:36px 0;padding:28px;border-radius:12px;border:1px solid var(--border);background:var(--navy-mid);text-align:center}
+.score-card h3{font-family:var(--font-display);font-size:22px;color:var(--cream);margin-bottom:6px}
+.score-card p{font-size:14px;color:var(--slate);margin:0}
+.score-result{font-family:var(--font-display);font-size:48px;font-weight:700;color:var(--copper);margin:12px 0}
+.score-label{font-family:var(--font-mono);font-size:12px;color:var(--slate-dim)}
+.score-btn{padding:10px 20px;border-radius:6px;background:var(--copper);color:var(--navy);border:none;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--font-body)}
+</style>
+</head>
+<body>
+
+<nav class="blog-nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo">
+      <div class="nav-logo-icon">T</div>
+      <div class="nav-logo-wrap">
+        <span class="nav-logo-text">TowerIQ</span>
+        <span class="nav-logo-tagline">AI Portfolio Intelligence</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="../#challenge">The Problem</a>
+      <a href="../#platform">Solution</a>
+      <a href="../#platform">AI Governance</a>
+      <a href="../#roi">ROI &amp; Value</a>
+      <a href="../#integrations">Integrations</a>
+      <a href="./" class="active">Blog</a>
+    </div>
+    <div class="nav-cta">
+      <a href="../" class="btn-primary">Join Waitlist →</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="mobile-drawer">
+  <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+  <a href="../#challenge" onclick="toggleDrawer()">The Problem</a>
+  <a href="../#platform" onclick="toggleDrawer()">Solution</a>
+  <a href="../#platform" onclick="toggleDrawer()">AI Governance</a>
+  <a href="../#roi" onclick="toggleDrawer()">ROI &amp; Value</a>
+  <a href="../#integrations" onclick="toggleDrawer()">Integrations</a>
+  <a href="./" onclick="toggleDrawer()">Blog</a>
+  <a href="../" class="btn-primary" style="text-align:center;justify-content:center;margin-top:8px">Join Waitlist →</a>
+</div>
+
+<div class="post-accent"></div>
+
+<main>
+
+<div class="blog-breadcrumb">
+  <a href="../">Home</a><span class="sep">→</span><a href="./">Blog</a><span class="sep">→</span><span style="color:var(--cream-dim)">AI Compliance Checklist</span>
+</div>
+
+<header class="blog-header">
+  <div class="blog-label">Compliance</div>
+  <h1>AI Compliance Checklist for <em>Enterprise Teams</em></h1>
+  <div class="blog-meta">
+    By <a href="https://www.linkedin.com/in/srikanthbalusani/" target="_blank" rel="noopener">Srikanth Balusani</a><span>·</span>April 18, 2026<span>·</span>7 min read
+  </div>
+</header>
+
+<nav class="blog-toc" aria-label="Table of contents">
+  <div class="blog-toc-inner">
+    <div class="blog-toc-title">In This Article</div>
+    <ul class="blog-toc-list">
+      <li><a href="#why-scrambling" class="blog-toc-link" data-target="why-scrambling"><span class="blog-toc-num">01</span>Why Compliance Teams Are Scrambling</a></li>
+      <li><a href="#the-checklist" class="blog-toc-link" data-target="the-checklist"><span class="blog-toc-num">02</span>The Checklist (18 Items)</a></li>
+      <li><a href="#scoring" class="blog-toc-link" data-target="scoring"><span class="blog-toc-num">03</span>Score Yourself</a></li>
+      <li><a href="#from-checklist" class="blog-toc-link" data-target="from-checklist"><span class="blog-toc-num">04</span>From Checklist to Action</a></li>
+    </ul>
+  </div>
+</nav>
+
+<article class="blog-body">
+
+<p>I'm going to skip the introduction you've read in every other compliance article. You know AI adoption is accelerating. You know regulations are coming. You know governance matters. What you need is a practical tool to assess where your organization actually stands — right now, today — so you can identify the gaps before an auditor does.</p>
+
+<p>That's what this checklist is. Eighteen questions across six categories. Answer them honestly. Count the "no" answers. Then act on the gaps.</p>
+
+<h2 id="why-scrambling">Why Compliance Teams Are <em>Scrambling</em></h2>
+
+<p>The gap between AI adoption and AI governance has never been wider. 81.8% of IT leaders now have documented AI governance policies, according to the 2025 SaaS Management Index. That sounds encouraging — until you look at what's actually being enforced.</p>
+
+<p>Only 21% of organizations have a mature governance model for AI agents, per Deloitte's 2026 State of AI report. That means roughly four out of five enterprises have policies on paper but lack the infrastructure to enforce them at scale. They're governing by intention, not by system.</p>
+
+<p>And the regulatory clock is ticking. The EU AI Act high-risk provisions take full effect in August 2026. It doesn't require you to have a governance document. It requires you to demonstrate <strong>continuous compliance with traceable evidence</strong>. If you can't show that when an auditor asks, the policy document won't help you.</p>
+
+<p>This checklist helps you figure out where the gaps are — before someone else does.</p>
+
+<h2 id="the-checklist">The Checklist: <em>18 Questions</em></h2>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Discovery &amp; Inventory</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you have a complete inventory of all AI tools, agents, and models deployed in your organization?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Does your inventory include shadow AI — tools employees adopted without IT approval?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Is your inventory updated continuously (not quarterly or annually)?</div>
+</div>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Policy &amp; Governance</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you have a documented, published AI governance policy?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Is that policy enforced automatically — or does it rely on manual review for each tool?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are vendor allowlists and blocklists actively maintained and applied to new discoveries?</div>
+</div>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Data Protection</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are data classification rules applied to AI tool access levels?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Is PII handling governed across all AI tools — including those employees use through personal accounts?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you monitor what data employees share with AI tools (prompt-level visibility)?</div>
+</div>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Access Control</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are AI tool permissions and OAuth grants reviewed regularly?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you audit OAuth scopes specifically for AI tools connecting to enterprise platforms?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Is there a documented human oversight requirement for high-risk AI deployments?</div>
+</div>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Audit &amp; Evidence</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you maintain an immutable audit trail of all governance decisions?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Can you produce compliance evidence within hours — not weeks — if an auditor requests it?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are exception workflows documented with expiration dates and auto-revalidation?</div>
+</div>
+
+<div class="checklist-group">
+  <div class="checklist-group-title">Spend &amp; Licensing</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Do you track AI spend by department, tool, and vendor?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are duplicate AI licenses across departments identified and consolidated?</div>
+  <div class="checklist-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div>Are contract renewals tracked with advance alerts to enable negotiation?</div>
+</div>
+
+<h2 id="scoring">Score <em>Yourself</em></h2>
+
+<div class="score-card">
+  <h3>Your AI Compliance Score</h3>
+  <div class="score-result" id="scoreDisplay">— / 18</div>
+  <div class="score-label">Click the checkboxes above, then check your score</div>
+  <p style="margin-top:12px"><button onclick="calcScore()" class="score-btn">Calculate My Score</button></p>
+</div>
+
+<div class="blog-callout">
+  <p><strong>15–18 "yes" answers:</strong> Your governance posture is strong. Focus on optimization — spend tracking, license utilization, ROI metrics.</p>
+  <p style="margin-top:12px"><strong>10–14 "yes" answers:</strong> You have foundations but significant gaps. Prioritize automated enforcement and audit trail infrastructure before August 2026.</p>
+  <p style="margin-top:12px"><strong>Under 10 "yes" answers:</strong> You have critical governance gaps that need immediate attention. Start with inventory — you can't fix what you can't see.</p>
+</div>
+
+<h2 id="from-checklist">From Checklist to <em>Action</em></h2>
+
+<p>If you scored well, congratulations — you're ahead of most enterprises. Focus your energy on the items you missed and on building the measurement and reporting capabilities that will keep your governance posture strong as AI adoption accelerates.</p>
+
+<p>If you have more than five "no" answers, here's the priority order I'd recommend based on what I've seen work in practice:</p>
+
+<p><strong>First: inventory.</strong> If you don't have a complete, continuously updated inventory of your AI tools — including shadow AI — nothing else on this checklist will be effective. You're governing against an incomplete picture. <a href="../?feature=3#platform">Automated discovery</a> gets you from zero to full visibility in 30 minutes.</p>
+
+<p><strong>Second: enforcement.</strong> A policy without enforcement is a suggestion. <a href="../?feature=1#platform">Automate the enforcement</a> of your existing governance policy — even if that policy is imperfect. You can refine the rules later. What you can't afford is another month of manual review that doesn't scale.</p>
+
+<p><strong>Third: audit trail.</strong> If an auditor asked you today to demonstrate how you enforce your AI governance policy, could you produce the evidence within hours? If not, that's the gap that creates the most regulatory exposure — especially with the EU AI Act deadline approaching.</p>
+
+<p><strong>Fourth: spend visibility.</strong> This is the gap that's costing you money every day it exists. Duplicate licenses, idle seats, and untracked shadow AI subscriptions compound monthly. <a href="../?feature=2#platform">Spend tracking</a> typically reveals 20–30% savings opportunities in the first audit.</p>
+
+<p>The checklist is a diagnostic tool. It tells you where the gaps are. What closes those gaps is infrastructure — the kind that discovers, governs, enforces, and measures continuously.</p>
+
+<div class="blog-cta">
+  <h3>Cover every item on this checklist from <em>one platform.</em></h3>
+  <p>TowerIQ handles discovery, enforcement, audit trails, and spend tracking. See your compliance score in 30 minutes.</p>
+  <a href="../">Join the Waitlist →</a>
+</div>
+
+</article>
+
+<section class="blog-related">
+  <div class="blog-related-label">Explore TowerIQ</div>
+  <div class="blog-related-links">
+    <a href="../?feature=1#platform" class="blog-related-link">AI Governance Engine →</a>
+    <a href="../?feature=3#platform" class="blog-related-link">Shadow AI Detection →</a>
+    <a href="../?feature=2#platform" class="blog-related-link">AI Spend Intelligence →</a>
+    <a href="../?feature=0#platform" class="blog-related-link">AI Asset Registry →</a>
+    <a href="eu-ai-act-compliance-2026.html" class="blog-related-link">EU AI Act: Before August 2026 →</a>
+    <a href="ai-governance-framework-guide.html" class="blog-related-link">Build a Framework From Scratch →</a>
+    <a href="./" class="blog-related-link">← All Posts</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="blog-footer">
+  <div class="footer-inner">
+    <div>
+      <a href="../" class="nav-logo" style="text-decoration:none">
+        <div class="nav-logo-icon">T</div>
+        <div class="nav-logo-wrap">
+          <span class="nav-logo-text">TowerIQ</span>
+          <span class="nav-logo-tagline">AI Portfolio Intelligence</span>
+        </div>
+      </a>
+      <p class="footer-brand-tagline">The AI Portfolio Intelligence platform for CIOs and technology leaders who need to see, govern, and optimize their entire AI footprint.</p>
+      <div style="margin-top:1.25rem;font-size:0.75rem;color:var(--slate-dim)">Built by <a href="https://shiftx.ai/" target="_blank" rel="noopener" style="color:var(--copper)">ShiftX AI</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <div class="footer-links">
+        <a href="../#platform">AI Asset Registry</a>
+        <a href="../#platform">Governance Engine</a>
+        <a href="../#platform">Spend Intelligence</a>
+        <a href="../#platform">Shadow AI Detection</a>
+        <a href="../#platform">Initiative Tracking</a>
+        <a href="../#platform">Adoption Intelligence</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="../">About</a>
+        <a href="../#security">Security</a>
+        <a href="mailto:contact@toweriq.ai">Contact Us</a>
+        <a href="../#faq">FAQ</a>
+        <a href="./">Blog</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 ShiftX LLC All rights reserved.</div>
+    <div>TowerIQ — AI Portfolio Intelligence</div>
+  </div>
+</footer>
+
+<script>
+function toggleDrawer() {
+  document.getElementById('mobile-drawer').classList.toggle('open');
+}
+function calcScore() {
+  const c = document.querySelectorAll('.check-box.checked').length;
+  document.getElementById('scoreDisplay').textContent = c + ' / 18';
+}
+(function() {
+  const tocLinks = document.querySelectorAll('.blog-toc-link');
+  const sections = [];
+  tocLinks.forEach(link => {
+    const id = link.getAttribute('data-target');
+    const section = document.getElementById(id);
+    if (section) sections.push({ id, el: section, link });
+  });
+  function updateActive() {
+    const scrollY = window.scrollY + 160;
+    let current = sections[0];
+    for (const s of sections) { if (s.el.offsetTop <= scrollY) current = s; }
+    tocLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(link.getAttribute('data-target'));
+      if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
