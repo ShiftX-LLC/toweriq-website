@@ -3,18 +3,3 @@
 
 [build]
   publish = "."
-
-# Careers page is not public yet — block direct access to /careers and /careers/*.
-# force = true is required so Netlify applies the redirect even though the static
-# file exists at careers/index.html. Remove these rules to take careers live.
-[[redirects]]
-  from = "/careers"
-  to = "/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/careers/*"
-  to = "/"
-  status = 302
-  force = true
