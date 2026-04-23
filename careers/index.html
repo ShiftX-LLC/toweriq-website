@@ -225,6 +225,55 @@
     .values-grid,.benefits-grid,.team-grid{grid-template-columns:1fr}
     .container{padding:0 1.25rem}
   }
+
+  /* ── MODALS & FORMS ── */
+  .modal{position:fixed;inset:0;z-index:3000;display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-backdrop{position:fixed;inset:0;background:rgba(5,8,15,0.82);backdrop-filter:blur(10px);cursor:pointer}
+  .modal-panel{position:relative;background:linear-gradient(180deg,#141c2d 0%,#0A0F1C 100%);border:1px solid var(--border);border-radius:20px;max-width:580px;width:100%;margin:auto;box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 80px rgba(212,148,76,0.08)}
+  .modal-close{position:absolute;top:0.9rem;right:1rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--slate);cursor:pointer;line-height:1;padding:0.4rem 0.65rem;border-radius:8px;font-size:1.2rem;transition:all 0.2s}
+  .modal-close:hover{color:var(--cream);background:rgba(255,255,255,0.1)}
+  .modal-body{padding:2.25rem 2rem 2rem}
+  .modal-eyebrow{margin-bottom:0.75rem}
+  .modal-title{font-family:var(--font-display);font-size:1.6rem;font-weight:500;line-height:1.2;color:var(--cream)}
+  .modal-sub{font-size:0.92rem;color:var(--slate);margin-top:0.5rem;line-height:1.6}
+
+  .tq-form{display:flex;flex-direction:column;gap:0.95rem;margin-top:1.6rem}
+  .tq-form .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem}
+  .tq-form label{display:flex;flex-direction:column;gap:0.35rem;font-size:0.78rem;color:var(--slate);font-family:var(--font-body);font-weight:500;letter-spacing:0.01em}
+  .tq-form label .req{color:var(--copper);margin-left:0.15rem}
+  .tq-form input,.tq-form select,.tq-form textarea{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:0.75rem 0.9rem;
+    font-family:var(--font-body);
+    font-size:0.92rem;
+    color:var(--cream);
+    transition:border-color 0.2s,background 0.2s;
+    width:100%;
+  }
+  .tq-form input::placeholder,.tq-form textarea::placeholder{color:var(--slate-dim)}
+  .tq-form input:focus,.tq-form select:focus,.tq-form textarea:focus{
+    outline:none;
+    border-color:var(--copper);
+    background:rgba(212,148,76,0.05);
+  }
+  .tq-form select{cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.85rem center;background-size:16px;padding-right:2.25rem}
+  .tq-form select option{background:#0A0F1C;color:var(--cream)}
+  .tq-form textarea{resize:vertical;min-height:96px;font-family:var(--font-body);line-height:1.5}
+  .tq-form .form-actions{display:flex;gap:0.75rem;margin-top:0.4rem;flex-wrap:wrap;align-items:center}
+  .tq-form .form-actions .btn{padding:0.8rem 1.4rem;font-size:0.9rem}
+  .tq-form .form-status{padding:0.85rem 1rem;border-radius:10px;font-size:0.88rem;line-height:1.5}
+  .tq-form .form-status.success{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);color:var(--emerald)}
+  .tq-form .form-status.error{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red)}
+  .tq-form .honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+  @media (max-width:560px){
+    .tq-form .form-row-2{grid-template-columns:1fr}
+    .modal{padding:0}
+    .modal-panel{border-radius:0;min-height:100vh}
+    .modal-body{padding:2.5rem 1.25rem 2rem}
+  }
 </style>
 </head>
 <body>
@@ -244,7 +293,7 @@
       <a href="/blog/">Blog</a>
       <a href="/careers/" class="active">Careers</a>
     </div>
-    <a href="mailto:careers@toweriq.ai?subject=Application%20%E2%80%94%20TowerIQ" class="btn btn-primary">Apply Now →</a>
+    <button type="button" class="btn btn-primary" data-modal="modal-application">Apply Now →</button>
   </div>
 </nav>
 
@@ -286,7 +335,7 @@
         We're a small, senior team making every AI agent, dollar, and risk visible to the CIOs and CFOs running the Fortune 500. If you're wired to ship, we should talk.
       </p>
       <div class="btn-group" style="justify-content:center">
-        <a href="mailto:careers@toweriq.ai" class="btn btn-primary">careers@toweriq.ai</a>
+        <button type="button" class="btn btn-primary" data-modal="modal-application">Apply now →</button>
       </div>
       <div class="hero-chips">
         <span class="chip">remote</span>
@@ -406,7 +455,7 @@
             <span><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg> 2–3 yrs experience</span>
           </div>
         </div>
-        <a href="mailto:careers@toweriq.ai?subject=Full-Stack%20Engineer%20%E2%80%94%20Application" class="btn btn-primary">Apply →</a>
+        <button type="button" class="btn btn-primary" data-modal="modal-application" data-role="Full-Stack Engineer">Apply →</button>
       </div>
 
       <div class="role-card">
@@ -422,7 +471,7 @@
             <span><svg class="ico" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M16 7H10a3 3 0 000 6h4a3 3 0 010 6H8"/></svg> Paid stipend</span>
           </div>
         </div>
-        <a href="mailto:careers@toweriq.ai?subject=Paid%20Intern%20%E2%80%94%20Application" class="btn btn-primary">Apply →</a>
+        <button type="button" class="btn btn-primary" data-modal="modal-application" data-role="Paid Intern">Apply →</button>
       </div>
 
       <div class="role-card">
@@ -438,12 +487,12 @@
             <span><svg class="ico" viewBox="0 0 24 24"><path d="M6 3h10l4 4v14H6z"/><path d="M16 3v4h4"/><line x1="9" y1="12" x2="17" y2="12"/><line x1="9" y1="16" x2="17" y2="16"/></svg> Mentorship + LoR + conversion path</span>
           </div>
         </div>
-        <a href="mailto:careers@toweriq.ai?subject=Merit%20Intern%20%E2%80%94%20Application" class="btn btn-primary">Apply →</a>
+        <button type="button" class="btn btn-primary" data-modal="modal-application" data-role="Merit Intern">Apply →</button>
       </div>
     </div>
 
     <p class="body-md" style="text-align:center;margin-top:2.5rem;color:var(--slate-dim)">
-      Don't see your exact role? <a href="mailto:careers@toweriq.ai" style="color:var(--copper)">Write to us anyway</a>. If you're a force multiplier, we'll make space.
+      Don't see your exact role? <a href="#" data-modal="modal-application" data-role="Other" style="color:var(--copper)">Write to us anyway</a>. If you're a force multiplier, we'll make space.
     </p>
 
     <!-- referral callout -->
@@ -459,8 +508,8 @@
         </p>
       </div>
       <div class="referral-right">
-        <a class="btn btn-primary" href="mailto:careers@toweriq.ai?subject=Referral%20%E2%80%94%20Someone%20You%20Should%20Meet&amp;body=Who%3A%20%0AWhy%20they%27re%20great%3A%20%0ATheir%20LinkedIn%2Fportfolio%3A%20%0A">Refer someone →</a>
-        <a class="btn btn-secondary" href="mailto:careers@toweriq.ai?subject=Referred%20by%20%5Bname%5D">I was referred</a>
+        <button type="button" class="btn btn-primary" data-modal="modal-referral">Refer someone →</button>
+        <button type="button" class="btn btn-secondary" data-modal="modal-application">I was referred</button>
         <div class="mono" style="color:var(--slate-dim);margin-top:0.75rem">careers@toweriq.ai</div>
       </div>
     </div>
@@ -531,7 +580,7 @@
         <div class="team-name">You?</div>
         <div class="team-role">Open Seat</div>
         <p class="team-bio">...and many more fellow shippers. We're adding engineers and interns now. Seat's warm. Keyboard's waiting.</p>
-        <a class="team-li" href="mailto:careers@toweriq.ai"><svg viewBox="0 0 24 24"><path d="M2 6l10 7 10-7v12H2z"/><path d="M2 6l10 7 10-7"/></svg> careers@toweriq.ai</a>
+        <a class="team-li" href="#" data-modal="modal-application"><svg viewBox="0 0 24 24"><path d="M2 6l10 7 10-7v12H2z"/><path d="M2 6l10 7 10-7"/></svg> Apply now</a>
       </div>
     </div>
     <p class="body-md" style="text-align:center;margin-top:2.5rem;color:var(--slate-dim);font-size:0.88rem">
@@ -551,7 +600,7 @@
           That's the category we're opening: untapped, urgent, and stupidly large. If you want to build the thing every CIO and CFO will wish they'd had two years ago, write to <strong style="color:var(--copper)">careers@toweriq.ai</strong>. Real human replies in 48 hours. No ATS black hole.
         </p>
         <div class="btn-group" style="justify-content:center">
-          <a href="mailto:careers@toweriq.ai?subject=Application%20%E2%80%94%20TowerIQ" class="btn btn-primary">Write to us →</a>
+          <button type="button" class="btn btn-primary" data-modal="modal-application">Write to us →</button>
           <a href="/" class="btn btn-secondary">Back to TowerIQ</a>
         </div>
       </div>
@@ -608,6 +657,136 @@
   </div>
 </footer>
 
+<!-- ══════════════ APPLICATION MODAL ══════════════ -->
+<div class="modal" id="modal-application" aria-hidden="true" role="dialog" aria-labelledby="app-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button type="button" class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-body">
+      <div class="label modal-eyebrow">Apply to TowerIQ</div>
+      <h3 id="app-title" class="modal-title">Tell us who you are.</h3>
+      <p class="modal-sub">Real humans read every one of these. We reply within 48 hours.</p>
+
+      <form
+        class="tq-form"
+        name="application"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/careers/?submitted=application"
+      >
+        <input type="hidden" name="form-name" value="application" />
+        <div class="honeypot"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></div>
+
+        <label>
+          <span>Role <span class="req">*</span></span>
+          <select name="role" required>
+            <option value="">Select a role…</option>
+            <option value="Full-Stack Engineer">Full-Stack Engineer</option>
+            <option value="Paid Intern">Paid Intern · Engineering</option>
+            <option value="Merit Intern">Unpaid / Learning Intern</option>
+            <option value="Other">Other / Open Application</option>
+          </select>
+        </label>
+
+        <div class="form-row-2">
+          <label>
+            <span>Full name <span class="req">*</span></span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Email <span class="req">*</span></span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+
+        <label>
+          <span>LinkedIn or portfolio URL <span class="req">*</span></span>
+          <input type="url" name="linkedin_or_portfolio" required placeholder="https://linkedin.com/in/you or https://yoursite.com" />
+        </label>
+
+        <label>
+          <span>Resume link (optional — Google Drive, Dropbox, Notion, etc.)</span>
+          <input type="url" name="resume_url" placeholder="https://..." />
+        </label>
+
+        <label>
+          <span>Referred by (optional)</span>
+          <input type="text" name="referred_by" placeholder="Name of the person who sent you" />
+        </label>
+
+        <label>
+          <span>Why you? <span class="req">*</span></span>
+          <textarea name="why_you" rows="4" required placeholder="What's the thing you've shipped you're proudest of? A project, a PR, a thing you broke and learned from. Links welcome."></textarea>
+        </label>
+
+        <div class="form-status" hidden></div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send application →</button>
+          <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ REFERRAL MODAL ══════════════ -->
+<div class="modal" id="modal-referral" aria-hidden="true" role="dialog" aria-labelledby="ref-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button type="button" class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-body">
+      <div class="label modal-eyebrow">Refer someone</div>
+      <h3 id="ref-title" class="modal-title">Who should we meet?</h3>
+      <p class="modal-sub">Referrals jump the line. Give us enough to open the door — we'll take it from there.</p>
+
+      <form
+        class="tq-form"
+        name="referral"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/careers/?submitted=referral"
+      >
+        <input type="hidden" name="form-name" value="referral" />
+        <div class="honeypot"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></div>
+
+        <div class="form-row-2">
+          <label>
+            <span>Your name <span class="req">*</span></span>
+            <input type="text" name="your_name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Your email <span class="req">*</span></span>
+            <input type="email" name="your_email" required autocomplete="email" />
+          </label>
+        </div>
+
+        <label>
+          <span>Who you're referring <span class="req">*</span></span>
+          <input type="text" name="referring_name" required placeholder="Their full name" />
+        </label>
+
+        <label>
+          <span>Their LinkedIn, email, or portfolio <span class="req">*</span></span>
+          <input type="text" name="referring_contact" required placeholder="https://linkedin.com/in/them or them@example.com" />
+        </label>
+
+        <label>
+          <span>Why they're great <span class="req">*</span></span>
+          <textarea name="why_great" rows="4" required placeholder="A sentence or two on what they've shipped, and why you'd want them on your team."></textarea>
+        </label>
+
+        <div class="form-status" hidden></div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send referral →</button>
+          <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
   // Mouse-tracked glow on value cards
   document.querySelectorAll('.value-card').forEach(c=>{
@@ -659,6 +838,81 @@
       showToast("<strong>Joke is on you, Human!</strong> Devs didn't have time to check that I removed the actual roast handler");
     });
   }
+
+  // ── MODAL + FORM WIRING ──
+  function openModal(id, preset){
+    const m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('open');
+    m.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    if(preset && preset.role){
+      const sel = m.querySelector('select[name="role"]');
+      if(sel) sel.value = preset.role;
+    }
+    const firstField = m.querySelector('select, input[type="text"], input[type="email"]');
+    if(firstField) setTimeout(()=>firstField.focus(), 80);
+  }
+  function closeModal(m){
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal').forEach(m=>{
+    m.querySelectorAll('[data-close]').forEach(el=>{
+      el.addEventListener('click',()=>closeModal(m));
+    });
+  });
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      document.querySelectorAll('.modal.open').forEach(closeModal);
+    }
+  });
+  document.querySelectorAll('[data-modal]').forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const id = btn.getAttribute('data-modal');
+      const role = btn.getAttribute('data-role');
+      openModal(id, role ? {role} : null);
+    });
+  });
+
+  // AJAX form submission for Netlify
+  function encodeForm(data){
+    return Object.keys(data).map(k=>encodeURIComponent(k)+'='+encodeURIComponent(data[k])).join('&');
+  }
+  document.querySelectorAll('.tq-form').forEach(form=>{
+    const status = form.querySelector('.form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      status.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      const data = {};
+      new FormData(form).forEach((v,k)=>{ data[k] = v; });
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: encodeForm(data)
+        });
+        if(!res.ok) throw new Error('Submission failed: ' + res.status);
+        form.reset();
+        status.hidden = false;
+        status.className = 'form-status success';
+        status.textContent = '✓ Got it. A real human will reply within 48 hours.';
+        submitBtn.textContent = 'Sent ✓';
+      } catch(err){
+        status.hidden = false;
+        status.className = 'form-status error';
+        status.innerHTML = 'Something went wrong. Please email <strong>careers@toweriq.ai</strong> directly.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  });
 </script>
 
 </body>
