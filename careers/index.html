@@ -137,14 +137,23 @@
 
   /* ── VALUES ── */
   .values-head{text-align:center;max-width:720px;margin:0 auto 4rem}
-  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-  .value-card{position:relative;background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:2rem;overflow:hidden;transition:all 0.35s;cursor:default}
-  .value-card::before{content:'';position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(212,148,76,0.12),transparent 40%);opacity:0;transition:opacity 0.4s;pointer-events:none}
-  .value-card:hover::before{opacity:1}
-  .value-card:hover{transform:translateY(-4px);border-color:rgba(212,148,76,0.3);background:rgba(212,148,76,0.04)}
-  .value-num{font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:var(--copper);line-height:1;margin-bottom:1rem;opacity:0.6}
-  .value-title{font-family:var(--font-display);font-size:1.35rem;font-weight:500;color:var(--cream);margin-bottom:0.75rem}
-  .value-body{font-size:0.92rem;color:var(--slate);line-height:1.65}
+  /* Principles masonry — oversized titles, thin copper hairline, no card chrome */
+  .principles-masonry{display:grid;grid-template-columns:repeat(12,1fr);gap:3.5rem 2.5rem;margin-top:1rem}
+  .principle{position:relative;padding:0.25rem 0 0.25rem 1.75rem;cursor:default}
+  .principle::before{content:'';position:absolute;left:0;top:0.5rem;bottom:0.5rem;width:1px;background:linear-gradient(180deg,rgba(212,148,76,0.45),rgba(212,148,76,0.05));transition:background 0.35s}
+  .principle:hover::before{background:linear-gradient(180deg,var(--copper),rgba(212,148,76,0.2))}
+  .principle-num{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.18em;color:var(--copper);opacity:0.8;margin-bottom:0.85rem;display:block}
+  .principle-title{font-family:var(--font-display);font-weight:300;line-height:1.02;letter-spacing:-0.02em;color:var(--cream);margin-bottom:1rem;transition:color 0.35s}
+  .principle:hover .principle-title{color:var(--copper-light)}
+  .principle-body{font-size:0.92rem;line-height:1.7;color:var(--slate);max-width:42ch}
+  .principle.sz-xl .principle-title{font-size:clamp(2.4rem,5.4vw,4.4rem)}
+  .principle.sz-lg .principle-title{font-size:clamp(2rem,4.2vw,3.2rem)}
+  .principle.sz-md .principle-title{font-size:clamp(1.55rem,3vw,2.15rem)}
+  .principle.sz-sm .principle-title{font-size:clamp(1.25rem,2.3vw,1.6rem);font-weight:400}
+  .principle.span-8{grid-column:span 8}
+  .principle.span-7{grid-column:span 7}
+  .principle.span-5{grid-column:span 5}
+  .principle.span-4{grid-column:span 4}
 
   /* ── ROLES ── */
   .roles-head{text-align:center;max-width:760px;margin:0 auto 3.5rem}
@@ -213,7 +222,10 @@
   @media (max-width:960px){
     .mission-grid{grid-template-columns:1fr;gap:3rem}
     .mission-visual{margin:0 auto}
-    .values-grid{grid-template-columns:repeat(2,1fr)}
+    .principles-masonry{grid-template-columns:repeat(6,1fr);gap:2.5rem 2rem}
+    .principle.span-8,.principle.span-7,.principle.span-5,.principle.span-4{grid-column:span 6}
+    .principle.sz-xl .principle-title{font-size:clamp(2rem,5vw,2.8rem)}
+    .principle.sz-lg .principle-title{font-size:clamp(1.8rem,4.5vw,2.4rem)}
     .benefits-grid{grid-template-columns:repeat(2,1fr)}
     .team-grid{grid-template-columns:repeat(2,1fr)}
     .role-card{grid-template-columns:1fr;gap:1.25rem}
@@ -222,7 +234,9 @@
   }
   @media (max-width:560px){
     .section{padding:4.5rem 0}
-    .values-grid,.benefits-grid,.team-grid{grid-template-columns:1fr}
+    .principles-masonry{grid-template-columns:1fr;gap:2.25rem}
+    .principle{padding-left:1.25rem}
+    .benefits-grid,.team-grid{grid-template-columns:1fr}
     .container{padding:0 1.25rem}
   }
 
@@ -399,36 +413,36 @@
       <p class="body-lg" style="margin-top:1rem">No posters. No rituals. Just the operating agreements we actually use to make decisions.</p>
     </div>
 
-    <div class="values-grid">
-      <div class="value-card reveal">
-        <div class="value-num">01</div>
-        <div class="value-title">Ship the thing</div>
-        <p class="value-body">Perfect is a procrastination strategy. Ship weekly, learn louder, fix in flight.</p>
+    <div class="principles-masonry">
+      <div class="principle reveal sz-xl span-7">
+        <span class="principle-num">01 — Cadence</span>
+        <h3 class="principle-title">Ship the thing</h3>
+        <p class="principle-body">Perfect is a procrastination strategy. Ship weekly, learn louder, fix in flight.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-num">02</div>
-        <div class="value-title">Customer, then code</div>
-        <p class="value-body">Every decision starts with a real CIO or CFO problem. Vanity features get cut before they're built.</p>
+      <div class="principle reveal sz-md span-5">
+        <span class="principle-num">02 — Focus</span>
+        <h3 class="principle-title">Customer, then code</h3>
+        <p class="principle-body">Every decision starts with a real CIO or CFO problem. Vanity features get cut before they're built.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-num">03</div>
-        <div class="value-title">Senior density</div>
-        <p class="value-body">Small team, high trust, no politics. Everyone owns outcomes end-to-end.</p>
+      <div class="principle reveal sz-sm span-4">
+        <span class="principle-num">03 — Team</span>
+        <h3 class="principle-title">Senior density</h3>
+        <p class="principle-body">Small team, high trust, no politics. Everyone owns outcomes end-to-end.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-num">04</div>
-        <div class="value-title">Boringly rigorous</div>
-        <p class="value-body">We're building governance software, so we write tests, threat-model, and document like lives depend on it.</p>
+      <div class="principle reveal sz-xl span-8">
+        <span class="principle-num">04 — Craft</span>
+        <h3 class="principle-title">Boringly rigorous</h3>
+        <p class="principle-body">We're building governance software, so we write tests, threat-model, and document like lives depend on it.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-num">05</div>
-        <div class="value-title">Write to think</div>
-        <p class="value-body">Proposals beat meetings. Async by default. Decisions leave a paper trail.</p>
+      <div class="principle reveal sz-md span-5">
+        <span class="principle-num">05 — Defaults</span>
+        <h3 class="principle-title">Write to think</h3>
+        <p class="principle-body">Proposals beat meetings. Async by default. Decisions leave a paper trail.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-num">06</div>
-        <div class="value-title">Kindness is load-bearing</div>
-        <p class="value-body">Push hard on ideas, never on people. Disagree fast, commit fully, praise loudly.</p>
+      <div class="principle reveal sz-lg span-7">
+        <span class="principle-num">06 — Tone</span>
+        <h3 class="principle-title">Kindness is load-bearing</h3>
+        <p class="principle-body">Push hard on ideas, never on people. Disagree fast, commit fully, praise loudly.</p>
       </div>
     </div>
   </div>
@@ -803,15 +817,6 @@
 </div>
 
 <script>
-  // Mouse-tracked glow on value cards
-  document.querySelectorAll('.value-card').forEach(c=>{
-    c.addEventListener('mousemove',e=>{
-      const r=c.getBoundingClientRect();
-      c.style.setProperty('--mx',(e.clientX-r.left)+'px');
-      c.style.setProperty('--my',(e.clientY-r.top)+'px');
-    });
-  });
-
   // Reveal on scroll
   const io=new IntersectionObserver((entries)=>{
     entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
