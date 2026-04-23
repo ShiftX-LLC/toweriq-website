@@ -268,6 +268,9 @@
   .tq-form .form-status.success{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);color:var(--emerald)}
   .tq-form .form-status.error{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red)}
   .tq-form .honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+  .tq-form .field-hint{font-size:0.72rem;color:var(--slate-dim);line-height:1.5;margin-top:0.1rem;font-weight:400}
+  .tq-form .field-error{font-size:0.78rem;color:var(--red);line-height:1.5;margin-top:0.15rem;font-weight:500}
+  .tq-form input.invalid,.tq-form select.invalid,.tq-form textarea.invalid{border-color:rgba(248,113,113,0.55);background:rgba(248,113,113,0.04)}
   @media (max-width:560px){
     .tq-form .form-row-2{grid-template-columns:1fr}
     .modal{padding:0}
@@ -702,12 +705,24 @@
 
         <label>
           <span>LinkedIn or portfolio URL <span class="req">*</span></span>
-          <input type="url" name="linkedin_or_portfolio" required placeholder="https://linkedin.com/in/you or https://yoursite.com" />
+          <input type="url" name="linkedin_or_portfolio" required
+                 pattern="https://.+"
+                 data-validate="portfolio"
+                 placeholder="https://linkedin.com/in/you"
+                 title="Must be a full https:// URL from an accepted provider." />
+          <span class="field-hint">Accepted: LinkedIn, GitHub, GitLab, Behance, Dribbble, Medium, dev.to, Read.cv, Stack Overflow, Hugging Face, Kaggle.</span>
+          <span class="field-error" hidden></span>
         </label>
 
         <label>
-          <span>Resume link (optional — Google Drive, Dropbox, Notion, etc.)</span>
-          <input type="url" name="resume_url" placeholder="https://..." />
+          <span>Resume link (optional)</span>
+          <input type="url" name="resume_url"
+                 pattern="https://.+"
+                 data-validate="resume"
+                 placeholder="https://drive.google.com/..."
+                 title="Must be a full https:// URL from an accepted provider." />
+          <span class="field-hint">Accepted: Google Drive, Google Docs, Dropbox, Notion, OneDrive, Box, LinkedIn, Read.cv, Standard Resume.</span>
+          <span class="field-error" hidden></span>
         </label>
 
         <label>
@@ -877,6 +892,86 @@
     });
   });
 
+  // ── URL VALIDATION: provider whitelists + per-provider length caps ──
+  const PROVIDERS = {
+    portfolio: [
+      {host:'linkedin.com',      pathPrefix:'/in/', maxLength:120, label:'LinkedIn'},
+      {host:'github.com',                            maxLength:120, label:'GitHub'},
+      {host:'gitlab.com',                            maxLength:120, label:'GitLab'},
+      {host:'behance.net',                           maxLength:150, label:'Behance'},
+      {host:'dribbble.com',                          maxLength:120, label:'Dribbble'},
+      {host:'medium.com',                            maxLength:150, label:'Medium'},
+      {host:'dev.to',                                maxLength:120, label:'dev.to'},
+      {host:'read.cv',                               maxLength:120, label:'Read.cv'},
+      {host:'stackoverflow.com',                     maxLength:180, label:'Stack Overflow'},
+      {host:'huggingface.co',                        maxLength:150, label:'Hugging Face'},
+      {host:'kaggle.com',                            maxLength:150, label:'Kaggle'},
+    ],
+    resume: [
+      {host:'drive.google.com',                      maxLength:280, label:'Google Drive'},
+      {host:'docs.google.com',                       maxLength:280, label:'Google Docs'},
+      {host:'dropbox.com',                           maxLength:280, label:'Dropbox'},
+      {host:'notion.so',                             maxLength:220, label:'Notion'},
+      {host:'notion.site',                           maxLength:220, label:'Notion'},
+      {host:'1drv.ms',                               maxLength:200, label:'OneDrive'},
+      {host:'onedrive.live.com',                     maxLength:300, label:'OneDrive'},
+      {host:'box.com',                               maxLength:280, label:'Box'},
+      {host:'linkedin.com',                          maxLength:200, label:'LinkedIn'},
+      {host:'read.cv',                               maxLength:150, label:'Read.cv'},
+      {host:'standardresume.co',                     maxLength:200, label:'Standard Resume'},
+    ],
+  };
+
+  function matchProvider(host, providers){
+    return providers.find(p => host === p.host || host.endsWith('.' + p.host));
+  }
+
+  function validateProviderUrl(raw, kind){
+    if(!raw) return {ok: true};
+    const providers = PROVIDERS[kind] || [];
+    let url;
+    try { url = new URL(raw.trim()); }
+    catch { return {ok: false, error: 'Paste a full URL including https://'}; }
+    if(url.protocol !== 'https:') return {ok: false, error: 'URL must start with https://'};
+    const host = url.hostname.toLowerCase().replace(/^www\./, '');
+    const provider = matchProvider(host, providers);
+    if(!provider){
+      const names = providers.map(p => p.label).join(', ');
+      return {ok: false, error: 'Only these providers are accepted: ' + names + '.'};
+    }
+    if(raw.length > provider.maxLength){
+      return {ok: false, error: provider.label + ' URLs can\'t exceed ' + provider.maxLength + ' characters.'};
+    }
+    if(provider.pathPrefix && !url.pathname.startsWith(provider.pathPrefix)){
+      return {ok: false, error: 'Use a ' + provider.label + ' profile URL (' + provider.host + provider.pathPrefix + '…).'};
+    }
+    return {ok: true};
+  }
+
+  function setFieldError(input, message){
+    const wrapper = input.closest('label');
+    const errEl = wrapper ? wrapper.querySelector('.field-error') : null;
+    if(message){
+      input.classList.add('invalid');
+      if(errEl){ errEl.textContent = message; errEl.hidden = false; }
+    } else {
+      input.classList.remove('invalid');
+      if(errEl){ errEl.textContent = ''; errEl.hidden = true; }
+    }
+  }
+
+  // Live validation on blur
+  document.querySelectorAll('[data-validate]').forEach(input=>{
+    input.addEventListener('blur',()=>{
+      const kind = input.getAttribute('data-validate');
+      const result = validateProviderUrl(input.value, kind);
+      setFieldError(input, result.ok ? null : result.error);
+    });
+    input.addEventListener('input',()=>{
+      if(input.classList.contains('invalid')) setFieldError(input, null);
+    });
+  });
+
   // AJAX form submission for Netlify
   function encodeForm(data){
     return Object.keys(data).map(k=>encodeURIComponent(k)+'='+encodeURIComponent(data[k])).join('&');
@@ -888,6 +983,25 @@
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       status.hidden = true;
+
+      // Run provider validation on all marked URL fields
+      let hasError = false;
+      form.querySelectorAll('[data-validate]').forEach(input=>{
+        const kind = input.getAttribute('data-validate');
+        const result = validateProviderUrl(input.value, kind);
+        if(!result.ok){
+          setFieldError(input, result.error);
+          hasError = true;
+        } else {
+          setFieldError(input, null);
+        }
+      });
+      if(hasError){
+        const firstBad = form.querySelector('.invalid');
+        if(firstBad) firstBad.focus();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
       const data = {};
