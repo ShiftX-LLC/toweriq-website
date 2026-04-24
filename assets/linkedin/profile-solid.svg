@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4944C"/>
+      <stop offset="100%" stop-color="#9A6025"/>
+    </linearGradient>
+  </defs>
+
+  <!-- solid copper background -->
+  <rect width="400" height="400" fill="url(#copper)"/>
+
+  <!-- T mark -->
+  <text x="200" y="295" font-family="Fraunces, Georgia, serif" font-size="280" font-weight="700" fill="#FFFFFF" text-anchor="middle">T</text>
+</svg>
