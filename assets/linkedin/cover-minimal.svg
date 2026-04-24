@@ -39,7 +39,7 @@
   <!-- RIGHT: launching soon (same position as main cover) -->
   <text x="840" y="178" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="0.22em" fill="#D4944C" font-weight="500">— COMING 2026</text>
   <text x="840" y="258" font-family="Fraunces, Georgia, serif" font-size="72" font-weight="300" fill="#FAF7F2" letter-spacing="-0.02em">Launching <tspan font-style="italic" fill="#D4944C">soon.</tspan></text>
-  <text x="840" y="298" font-family="DM Sans, sans-serif" font-size="17" fill="#94A3B8">See, govern, and optimize every AI investment — from one command center.</text>
+  <text x="840" y="298" font-family="DM Sans, sans-serif" font-size="17" fill="#94A3B8">See, govern, and optimize every AI investment from one command center.</text>
 
   <!-- bottom-right small mark -->
   <text x="1500" y="362" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.16em" fill="#64748B" text-anchor="end">TOWERIQ.AI</text>
