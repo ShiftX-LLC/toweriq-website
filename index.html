@@ -376,13 +376,12 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 40px; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       backdrop-filter: blur(20px) saturate(160%);
       background: rgba(10,15,28,0.85);
       border-bottom: 1px solid var(--border);
       transition: top 0.3s, background 0.3s;
     }
-    body.announce-hidden nav { top: 0; }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2rem; max-width: 1200px; margin: 0 auto;
@@ -415,7 +414,7 @@
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
-      padding-top: 120px;
+      padding-top: 96px;
       position: relative;
       overflow: hidden;
     }
@@ -1535,7 +1534,7 @@
       .reg-timeline { grid-template-columns: 1fr; gap: 1.25rem; }
 
       /* hero */
-      .hero { padding-top: 110px; min-height: auto; padding-bottom: 3rem; }
+      .hero { padding-top: 72px; min-height: auto; padding-bottom: 3rem; }
       .hero-card-main { padding: 1rem; }
       .hero-headline br { display: none; }
       .btn-group { flex-direction: column; align-items: stretch; }
@@ -1562,11 +1561,8 @@
         right: 0.35rem; top: 50%; transform: translateY(-50%);
         font-size: 1.1rem; width: 24px; height: 24px; line-height: 1; padding: 0;
       }
-      nav { top: 36px; }
+      nav { top: 0; }
       .nav-inner { padding: 0.6rem 1rem; }
-      .hero { padding-top: 108px; }
-      body.announce-hidden nav { top: 0; }
-      body.announce-hidden .hero { padding-top: 72px; }
 
       /* feature tabs \u2192 horizontal scroll chips */
       .feature-tabs-nav {
@@ -1668,7 +1664,7 @@
 </form>
 
 <!-- ═══════════════════════════════════════════ ANNOUNCEMENT BAR ═══ -->
-<div class="announce-bar" id="announce-bar">
+<!-- <div class="announce-bar" id="announce-bar">
   <span>
     <span class="lighthouse-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1688,7 +1684,7 @@
     </span><span class="text-wrap"><strong class="shimmer-word">Launching soon</strong><span class="tagline-full"> — Limited early access spots available for enterprise teams.</span><span class="tagline-short"> — Early access open</span></span>
   </span>
   <button class="announce-dismiss" onclick="document.getElementById('announce-bar').style.display='none';document.body.classList.add('announce-hidden');document.querySelector('.hero').style.paddingTop='80px';" aria-label="Dismiss">×</button>
-</div>
+</div> -->
 
 <!-- ═══════════════════════════════════════════ NAV ═══ -->
 <nav>
@@ -2808,7 +2804,7 @@
       Be first.<br/><em>Before the deadline hits.</em>
     </h2>
     <p class="body-lg" style="max-width:540px;margin-left:auto;margin-right:auto;margin-bottom:2.5rem">
-      TowerIQ is launching soon. A limited number of enterprise teams will get early access — full platform, white-glove onboarding, and a direct line to the product team. Spots are filling fast.
+      A limited number of enterprise teams will get early access — full platform, white-glove onboarding, and a direct line to the product team. Spots are filling fast.
     </p>
     <div class="btn-group" style="justify-content:center">
       <button class="btn btn-primary" style="padding:1rem 2.25rem;font-size:1rem" onclick="openWaitlist()">Join the Waitlist →</button>
